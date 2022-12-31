@@ -1,0 +1,10 @@
+[project]
+name = "ftc_api"
+version = "0.0.0"
+dependencies = [
+    "requests"
+]
+
+[build-system]
+requires = ["setuptools", "httpx", "attrs", "python-dateutil"]
+build-backend = "setuptools.build_meta"
