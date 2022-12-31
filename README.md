@@ -1,4 +1,4 @@
-# ftc api
+# FTC api
 A client library for accessing FTC Events API
 
 ## Usage
