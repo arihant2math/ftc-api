@@ -11,7 +11,7 @@ setup(
     description='A python client to access the FIRST Tech Challenge API',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    version='0.0.2',
+    version='0.1.0',
     install_requires=[
         'httpx', 'attrs', 'python-dateutil'
     ]
