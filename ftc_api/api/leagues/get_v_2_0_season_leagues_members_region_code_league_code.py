@@ -17,7 +17,7 @@ def _get_kwargs(
     client: AuthenticatedClient,
 ) -> Dict[str, Any]:
     url = "{}/v2.0/{season}/leagues/members/{regionCode}/{leagueCode}".format(
-        "https://ftc-api.firstinspires.org/", season=season, regionCode=region_code, leagueCode=league_code
+        "https://ftc-api.firstinspires.org", season=season, regionCode=region_code, leagueCode=league_code
     )
 
     headers: Dict[str, str] = client.get_headers()

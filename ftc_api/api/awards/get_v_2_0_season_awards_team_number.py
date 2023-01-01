@@ -16,7 +16,7 @@ def _get_kwargs(
     client: AuthenticatedClient,
     event_code: Union[Unset, None, str] = "",
 ) -> Dict[str, Any]:
-    url = "{}/v2.0/{season}/awards/{teamNumber}".format("https://ftc-api.firstinspires.org/", season=season, teamNumber=team_number)
+    url = "{}/v2.0/{season}/awards/{teamNumber}".format("https://ftc-api.firstinspires.org", season=season, teamNumber=team_number)
 
     headers: Dict[str, str] = client.get_headers()
     cookies: Dict[str, Any] = client.get_cookies()

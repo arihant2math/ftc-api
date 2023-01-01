@@ -18,7 +18,7 @@ def _get_kwargs(
     state: Union[Unset, None, str] = "",
     page: Union[Unset, None, int] = 1,
 ) -> Dict[str, Any]:
-    url = "{}/v2.0/{season}/teams".format("https://ftc-api.firstinspires.org/", season=season)
+    url = "{}/v2.0/{season}/teams".format("https://ftc-api.firstinspires.org", season=season)
 
     headers: Dict[str, str] = client.get_headers()
     cookies: Dict[str, Any] = client.get_cookies()

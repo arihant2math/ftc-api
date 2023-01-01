@@ -22,7 +22,7 @@ def _get_kwargs(
     end: Union[Unset, None, int] = 999,
 ) -> Dict[str, Any]:
     url = "{}/v2.0/{season}/schedule/{eventCode}/{tournamentLevel}/hybrid".format(
-        "https://ftc-api.firstinspires.org/", season=season, eventCode=event_code, tournamentLevel=tournament_level
+        "https://ftc-api.firstinspires.org", season=season, eventCode=event_code, tournamentLevel=tournament_level
     )
 
     headers: Dict[str, str] = client.get_headers()

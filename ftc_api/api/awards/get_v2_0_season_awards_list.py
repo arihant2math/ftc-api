@@ -14,7 +14,7 @@ def _get_kwargs(
     *,
     client: AuthenticatedClient,
 ) -> Dict[str, Any]:
-    url = "{}/v2.0/{season}/awards/list".format("https://ftc-api.firstinspires.org/", season=season)
+    url = "{}/v2.0/{season}/awards/list".format("https://ftc-api.firstinspires.org", season=season)
 
     headers: Dict[str, str] = client.get_headers()
     cookies: Dict[str, Any] = client.get_cookies()
