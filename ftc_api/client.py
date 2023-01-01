@@ -24,10 +24,14 @@ class Client:
     timeout: float = attr.ib(5.0, kw_only=True)
     verify_ssl: Union[str, bool, ssl.SSLContext] = attr.ib(True, kw_only=True)
     raise_on_unexpected_status: bool = attr.ib(False, kw_only=True)
+    token: str
+    prefix: str = "Basic"
+    auth_header_name: str = "Authorization"
 
     def get_headers(self) -> Dict[str, str]:
-        """Get headers to be used in all endpoints"""
-        return {**self.headers}
+        auth_header_value = f"{self.prefix} {self.token}" if self.prefix else self.token
+        """Get headers to be used in authenticated endpoints"""
+        return {self.auth_header_name: auth_header_value, **self.headers}
 
     def with_headers(self, headers: Dict[str, str]) -> "Client":
         """Get a new client matching this one with additional headers"""
@@ -48,15 +52,5 @@ class Client:
         return attr.evolve(self, timeout=timeout)
 
 
-@attr.s(auto_attribs=True)
 class AuthenticatedClient(Client):
-    """A Client which has been authenticated for use on secured endpoints"""
-
-    token: str
-    prefix: str = "Basic"
-    auth_header_name: str = "Authorization"
-
-    def get_headers(self) -> Dict[str, str]:
-        auth_header_value = f"{self.prefix} {self.token}" if self.prefix else self.token
-        """Get headers to be used in authenticated endpoints"""
-        return {self.auth_header_name: auth_header_value, **self.headers}
+    pass
