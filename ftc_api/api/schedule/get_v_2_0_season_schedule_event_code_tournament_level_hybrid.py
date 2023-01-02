@@ -4,7 +4,7 @@ from typing import Any, Dict, Optional, Union, cast
 import httpx
 
 from ... import errors
-from ...client import AuthenticatedClient, Client
+from ...client import Client
 from ...models.get_v20_season_schedule_event_code_tournament_level_hybrid_tournament_level import (
     GetV20SeasonScheduleEventCodeTournamentLevelHybridTournamentLevel,
 )
@@ -17,7 +17,7 @@ def _get_kwargs(
     event_code: Optional[str],
     tournament_level: Optional[GetV20SeasonScheduleEventCodeTournamentLevelHybridTournamentLevel],
     *,
-    client: AuthenticatedClient,
+    client: Client,
     start: Union[Unset, None, int] = 0,
     end: Union[Unset, None, int] = 999,
 ) -> Dict[str, Any]:
@@ -73,7 +73,7 @@ def sync_detailed(
     event_code: Optional[str],
     tournament_level: Optional[GetV20SeasonScheduleEventCodeTournamentLevelHybridTournamentLevel],
     *,
-    client: AuthenticatedClient,
+    client: Client,
     start: Union[Unset, None, int] = 0,
     end: Union[Unset, None, int] = 999,
 ) -> Response[Union[Any, HybridSchedule]]:
@@ -122,7 +122,7 @@ def sync(
     event_code: Optional[str],
     tournament_level: Optional[GetV20SeasonScheduleEventCodeTournamentLevelHybridTournamentLevel],
     *,
-    client: AuthenticatedClient,
+    client: Client,
     start: Union[Unset, None, int] = 0,
     end: Union[Unset, None, int] = 999,
 ) -> Optional[Union[Any, HybridSchedule]]:
@@ -164,7 +164,7 @@ async def asyncio_detailed(
     event_code: Optional[str],
     tournament_level: Optional[GetV20SeasonScheduleEventCodeTournamentLevelHybridTournamentLevel],
     *,
-    client: AuthenticatedClient,
+    client: Client,
     start: Union[Unset, None, int] = 0,
     end: Union[Unset, None, int] = 999,
 ) -> Response[Union[Any, HybridSchedule]]:
@@ -211,7 +211,7 @@ async def asyncio(
     event_code: Optional[str],
     tournament_level: Optional[GetV20SeasonScheduleEventCodeTournamentLevelHybridTournamentLevel],
     *,
-    client: AuthenticatedClient,
+    client: Client,
     start: Union[Unset, None, int] = 0,
     end: Union[Unset, None, int] = 999,
 ) -> Optional[Union[Any, HybridSchedule]]:

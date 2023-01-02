@@ -4,7 +4,7 @@ from typing import Any, Dict, Optional, Union, cast
 import httpx
 
 from ... import errors
-from ...client import AuthenticatedClient, Client
+from ...client import Client
 from ...models.league_list import LeagueList
 from ...types import UNSET, Response, Unset
 
@@ -12,7 +12,7 @@ from ...types import UNSET, Response, Unset
 def _get_kwargs(
     season: int,
     *,
-    client: AuthenticatedClient,
+    client: Client,
     region_code: Union[Unset, None, str] = UNSET,
     league_code: Union[Unset, None, str] = UNSET,
 ) -> Dict[str, Any]:
@@ -64,7 +64,7 @@ def _build_response(*, client: Client, response: httpx.Response) -> Response[Uni
 def sync_detailed(
     season: int,
     *,
-    client: AuthenticatedClient,
+    client: Client,
     region_code: Union[Unset, None, str] = UNSET,
     league_code: Union[Unset, None, str] = UNSET,
 ) -> Response[Union[Any, LeagueList]]:
@@ -107,7 +107,7 @@ def sync_detailed(
 def sync(
     season: int,
     *,
-    client: AuthenticatedClient,
+    client: Client,
     region_code: Union[Unset, None, str] = UNSET,
     league_code: Union[Unset, None, str] = UNSET,
 ) -> Optional[Union[Any, LeagueList]]:
@@ -143,7 +143,7 @@ def sync(
 async def asyncio_detailed(
     season: int,
     *,
-    client: AuthenticatedClient,
+    client: Client,
     region_code: Union[Unset, None, str] = UNSET,
     league_code: Union[Unset, None, str] = UNSET,
 ) -> Response[Union[Any, LeagueList]]:
@@ -184,7 +184,7 @@ async def asyncio_detailed(
 async def asyncio(
     season: int,
     *,
-    client: AuthenticatedClient,
+    client: Client,
     region_code: Union[Unset, None, str] = UNSET,
     league_code: Union[Unset, None, str] = UNSET,
 ) -> Optional[Union[Any, LeagueList]]:

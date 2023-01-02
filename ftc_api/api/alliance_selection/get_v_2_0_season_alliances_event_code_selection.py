@@ -4,7 +4,7 @@ from typing import Any, Dict, Optional, Union, cast
 import httpx
 
 from ... import errors
-from ...client import AuthenticatedClient, Client
+from ...client import Client
 from ...models.alliance_selection_details import AllianceSelectionDetails
 from ...types import Response
 
@@ -13,7 +13,7 @@ def _get_kwargs(
     season: int,
     event_code: Optional[str],
     *,
-    client: AuthenticatedClient,
+    client: Client,
 ) -> Dict[str, Any]:
     url = "{}/v2.0/{season}/alliances/{eventCode}/selection".format(
         "https://ftc-api.firstinspires.org", season=season, eventCode=event_code
@@ -58,7 +58,7 @@ def sync_detailed(
     season: int,
     event_code: Optional[str],
     *,
-    client: AuthenticatedClient,
+    client: Client,
 ) -> Response[Union[AllianceSelectionDetails, Any]]:
     """Alliance Selection Details
 
@@ -95,7 +95,7 @@ def sync(
     season: int,
     event_code: Optional[str],
     *,
-    client: AuthenticatedClient,
+    client: Client,
 ) -> Optional[Union[AllianceSelectionDetails, Any]]:
     """Alliance Selection Details
 
@@ -125,7 +125,7 @@ async def asyncio_detailed(
     season: int,
     event_code: Optional[str],
     *,
-    client: AuthenticatedClient,
+    client: Client,
 ) -> Response[Union[AllianceSelectionDetails, Any]]:
     """Alliance Selection Details
 
@@ -160,7 +160,7 @@ async def asyncio(
     season: int,
     event_code: Optional[str],
     *,
-    client: AuthenticatedClient,
+    client: Client,
 ) -> Optional[Union[AllianceSelectionDetails, Any]]:
     """Alliance Selection Details
 

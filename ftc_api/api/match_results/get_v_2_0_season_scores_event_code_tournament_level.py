@@ -4,7 +4,7 @@ from typing import Any, Dict, Optional, Union, cast
 import httpx
 
 from ... import errors
-from ...client import AuthenticatedClient, Client
+from ...client import Client
 from ...models.get_v20_season_scores_event_code_tournament_level_tournament_level import (
     GetV20SeasonScoresEventCodeTournamentLevelTournamentLevel,
 )
@@ -17,7 +17,7 @@ def _get_kwargs(
     event_code: Optional[str],
     tournament_level: Optional[GetV20SeasonScoresEventCodeTournamentLevelTournamentLevel],
     *,
-    client: AuthenticatedClient,
+    client: Client,
     team_number: Union[Unset, None, int] = UNSET,
     match_number: Union[Unset, None, int] = UNSET,
     start: Union[Unset, None, int] = 0,
@@ -79,7 +79,7 @@ def sync_detailed(
     event_code: Optional[str],
     tournament_level: Optional[GetV20SeasonScoresEventCodeTournamentLevelTournamentLevel],
     *,
-    client: AuthenticatedClient,
+    client: Client,
     team_number: Union[Unset, None, int] = UNSET,
     match_number: Union[Unset, None, int] = UNSET,
     start: Union[Unset, None, int] = 0,
@@ -133,7 +133,7 @@ def sync(
     event_code: Optional[str],
     tournament_level: Optional[GetV20SeasonScoresEventCodeTournamentLevelTournamentLevel],
     *,
-    client: AuthenticatedClient,
+    client: Client,
     team_number: Union[Unset, None, int] = UNSET,
     match_number: Union[Unset, None, int] = UNSET,
     start: Union[Unset, None, int] = 0,
@@ -180,7 +180,7 @@ async def asyncio_detailed(
     event_code: Optional[str],
     tournament_level: Optional[GetV20SeasonScoresEventCodeTournamentLevelTournamentLevel],
     *,
-    client: AuthenticatedClient,
+    client: Client,
     team_number: Union[Unset, None, int] = UNSET,
     match_number: Union[Unset, None, int] = UNSET,
     start: Union[Unset, None, int] = 0,
@@ -232,7 +232,7 @@ async def asyncio(
     event_code: Optional[str],
     tournament_level: Optional[GetV20SeasonScoresEventCodeTournamentLevelTournamentLevel],
     *,
-    client: AuthenticatedClient,
+    client: Client,
     team_number: Union[Unset, None, int] = UNSET,
     match_number: Union[Unset, None, int] = UNSET,
     start: Union[Unset, None, int] = 0,
