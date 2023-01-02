@@ -1,10 +1,26 @@
 [project]
 name = "ftc_api"
+description = "A python client to access the FIRST Tech Challenge API"
+authors = [
+    {name = "Ashwin Naren", email="arihant2math@gmail.com"}
+]
+license = {file = "LICENSE"}
+readme = "README.md"
 version = "0.1.0"
 dependencies = [
-    "requests"
+    "httpx", "python-dateutil"
+]
+keywords = ["ftc"]
+requires-python = ">=3.7"
+
+[project.optional-dependencies]
+dev = [
+    "black"
 ]
 
 [build-system]
-requires = ["setuptools", "httpx", "attrs", "python-dateutil"]
+requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["ftc_api"]
