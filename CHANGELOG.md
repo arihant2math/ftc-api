@@ -8,5 +8,4 @@
 ## 0.1.0
 * Merged `Client` with `AuthenticatedClient` using `AuthenticatedClient` is now deprecated
 * Added support for creating a Client with a username and access key
-* Removed `attrs` as a dependency
-* Added support for [ftcstats](https://ftcstats.org)
+* Various bug fixes and internal changes

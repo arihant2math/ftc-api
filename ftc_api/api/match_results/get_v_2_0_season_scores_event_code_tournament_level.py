@@ -9,7 +9,7 @@ from ...models.get_v20_season_scores_event_code_tournament_level_tournament_leve
     GetV20SeasonScoresEventCodeTournamentLevelTournamentLevel,
 )
 from ...models.match_score_list import MatchScoreList
-from ...types import UNSET, Response, Unset
+from ..._types import UNSET, Response, Unset
 
 
 def _get_kwargs(

@@ -4,7 +4,7 @@ from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 import attr
 from dateutil.parser import isoparse
 
-from ..types import UNSET, Unset
+from .._types import UNSET, Unset
 
 if TYPE_CHECKING:
     from ..models.match_result_team import MatchResultTeam

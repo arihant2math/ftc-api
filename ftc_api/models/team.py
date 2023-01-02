@@ -2,7 +2,7 @@ from typing import Any, Dict, Type, TypeVar, Union
 
 import attr
 
-from ..types import UNSET, Unset
+from .._types import UNSET, Unset
 
 T = TypeVar("T", bound="Team")
 

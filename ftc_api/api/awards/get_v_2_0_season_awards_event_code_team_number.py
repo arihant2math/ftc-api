@@ -6,7 +6,7 @@ import httpx
 from ... import errors
 from ...client import Client
 from ...models.award_assignment_list import AwardAssignmentList
-from ...types import Response
+from ..._types import Response
 
 
 def _get_kwargs(

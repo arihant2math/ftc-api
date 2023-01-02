@@ -3,7 +3,7 @@ from typing import Any, Dict, List, Type, TypeVar, Union
 import attr
 
 from ..models.stone import Stone
-from ..types import UNSET, Unset
+from .._types import UNSET, Unset
 
 T = TypeVar("T", bound="SkyStoneAllianceScoreDetails")
 

@@ -6,7 +6,7 @@ import httpx
 from ... import errors
 from ...client import Client
 from ...models.league_list import LeagueList
-from ...types import UNSET, Response, Unset
+from ..._types import UNSET, Response, Unset
 
 
 def _get_kwargs(

@@ -9,7 +9,7 @@ from ...models.get_v20_season_schedule_event_code_tournament_level_hybrid_tourna
     GetV20SeasonScheduleEventCodeTournamentLevelHybridTournamentLevel,
 )
 from ...models.hybrid_schedule import HybridSchedule
-from ...types import UNSET, Response, Unset
+from ..._types import UNSET, Response, Unset
 
 
 def _get_kwargs(

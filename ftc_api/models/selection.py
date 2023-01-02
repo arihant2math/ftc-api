@@ -3,7 +3,7 @@ from typing import Any, Dict, Type, TypeVar, Union
 import attr
 
 from ..models.selection_result import SelectionResult
-from ..types import UNSET, Unset
+from .._types import UNSET, Unset
 
 T = TypeVar("T", bound="Selection")
 

@@ -5,7 +5,7 @@ import attr
 from ..models.auto_navigated_status import AutoNavigatedStatus
 from ..models.barcode_element import BarcodeElement
 from ..models.endgame_parked_status import EndgameParkedStatus
-from ..types import UNSET, Unset
+from .._types import UNSET, Unset
 
 T = TypeVar("T", bound="FreightFrenzyRemoteScoreBreakdown")
 
