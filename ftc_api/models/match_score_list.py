@@ -5,13 +5,23 @@ import attr
 from .._types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.freight_frenzy_alliance_score_details import FreightFrenzyAllianceScoreDetails
-    from ..models.freight_frenzy_single_team_score_details import FreightFrenzySingleTeamScoreDetails
+    from ..models.freight_frenzy_alliance_score_details import (
+        FreightFrenzyAllianceScoreDetails,
+    )
+    from ..models.freight_frenzy_single_team_score_details import (
+        FreightFrenzySingleTeamScoreDetails,
+    )
     from ..models.power_play_alliance_score_details import PowerPlayAllianceScoreDetails
-    from ..models.power_play_single_team_score_details import PowerPlaySingleTeamScoreDetails
+    from ..models.power_play_single_team_score_details import (
+        PowerPlaySingleTeamScoreDetails,
+    )
     from ..models.sky_stone_score_details import SkyStoneScoreDetails
-    from ..models.ultimate_goal_alliance_score_details import UltimateGoalAllianceScoreDetails
-    from ..models.ultimate_goal_single_team_score_details import UltimateGoalSingleTeamScoreDetails
+    from ..models.ultimate_goal_alliance_score_details import (
+        UltimateGoalAllianceScoreDetails,
+    )
+    from ..models.ultimate_goal_single_team_score_details import (
+        UltimateGoalSingleTeamScoreDetails,
+    )
 
 
 T = TypeVar("T", bound="MatchScoreList")
@@ -43,12 +53,22 @@ class MatchScoreList:
     ] = UNSET
 
     def to_dict(self) -> Dict[str, Any]:
-        from ..models.freight_frenzy_alliance_score_details import FreightFrenzyAllianceScoreDetails
-        from ..models.freight_frenzy_single_team_score_details import FreightFrenzySingleTeamScoreDetails
-        from ..models.power_play_alliance_score_details import PowerPlayAllianceScoreDetails
+        from ..models.freight_frenzy_alliance_score_details import (
+            FreightFrenzyAllianceScoreDetails,
+        )
+        from ..models.freight_frenzy_single_team_score_details import (
+            FreightFrenzySingleTeamScoreDetails,
+        )
+        from ..models.power_play_alliance_score_details import (
+            PowerPlayAllianceScoreDetails,
+        )
         from ..models.sky_stone_score_details import SkyStoneScoreDetails
-        from ..models.ultimate_goal_alliance_score_details import UltimateGoalAllianceScoreDetails
-        from ..models.ultimate_goal_single_team_score_details import UltimateGoalSingleTeamScoreDetails
+        from ..models.ultimate_goal_alliance_score_details import (
+            UltimateGoalAllianceScoreDetails,
+        )
+        from ..models.ultimate_goal_single_team_score_details import (
+            UltimateGoalSingleTeamScoreDetails,
+        )
 
         match_scores: Union[Unset, None, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.match_scores, Unset):
@@ -62,19 +82,29 @@ class MatchScoreList:
                     if isinstance(match_scores_item_data, SkyStoneScoreDetails):
                         match_scores_item = match_scores_item_data.to_dict()
 
-                    elif isinstance(match_scores_item_data, UltimateGoalAllianceScoreDetails):
+                    elif isinstance(
+                        match_scores_item_data, UltimateGoalAllianceScoreDetails
+                    ):
                         match_scores_item = match_scores_item_data.to_dict()
 
-                    elif isinstance(match_scores_item_data, UltimateGoalSingleTeamScoreDetails):
+                    elif isinstance(
+                        match_scores_item_data, UltimateGoalSingleTeamScoreDetails
+                    ):
                         match_scores_item = match_scores_item_data.to_dict()
 
-                    elif isinstance(match_scores_item_data, FreightFrenzyAllianceScoreDetails):
+                    elif isinstance(
+                        match_scores_item_data, FreightFrenzyAllianceScoreDetails
+                    ):
                         match_scores_item = match_scores_item_data.to_dict()
 
-                    elif isinstance(match_scores_item_data, FreightFrenzySingleTeamScoreDetails):
+                    elif isinstance(
+                        match_scores_item_data, FreightFrenzySingleTeamScoreDetails
+                    ):
                         match_scores_item = match_scores_item_data.to_dict()
 
-                    elif isinstance(match_scores_item_data, PowerPlayAllianceScoreDetails):
+                    elif isinstance(
+                        match_scores_item_data, PowerPlayAllianceScoreDetails
+                    ):
                         match_scores_item = match_scores_item_data.to_dict()
 
                     else:
@@ -91,13 +121,25 @@ class MatchScoreList:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.freight_frenzy_alliance_score_details import FreightFrenzyAllianceScoreDetails
-        from ..models.freight_frenzy_single_team_score_details import FreightFrenzySingleTeamScoreDetails
-        from ..models.power_play_alliance_score_details import PowerPlayAllianceScoreDetails
-        from ..models.power_play_single_team_score_details import PowerPlaySingleTeamScoreDetails
+        from ..models.freight_frenzy_alliance_score_details import (
+            FreightFrenzyAllianceScoreDetails,
+        )
+        from ..models.freight_frenzy_single_team_score_details import (
+            FreightFrenzySingleTeamScoreDetails,
+        )
+        from ..models.power_play_alliance_score_details import (
+            PowerPlayAllianceScoreDetails,
+        )
+        from ..models.power_play_single_team_score_details import (
+            PowerPlaySingleTeamScoreDetails,
+        )
         from ..models.sky_stone_score_details import SkyStoneScoreDetails
-        from ..models.ultimate_goal_alliance_score_details import UltimateGoalAllianceScoreDetails
-        from ..models.ultimate_goal_single_team_score_details import UltimateGoalSingleTeamScoreDetails
+        from ..models.ultimate_goal_alliance_score_details import (
+            UltimateGoalAllianceScoreDetails,
+        )
+        from ..models.ultimate_goal_single_team_score_details import (
+            UltimateGoalSingleTeamScoreDetails,
+        )
 
         d = src_dict.copy()
         match_scores = []
@@ -126,7 +168,9 @@ class MatchScoreList:
                 try:
                     if not isinstance(data, dict):
                         raise TypeError()
-                    match_scores_item_type_1 = UltimateGoalAllianceScoreDetails.from_dict(data)
+                    match_scores_item_type_1 = (
+                        UltimateGoalAllianceScoreDetails.from_dict(data)
+                    )
 
                     return match_scores_item_type_1
                 except:  # noqa: E722
@@ -134,7 +178,9 @@ class MatchScoreList:
                 try:
                     if not isinstance(data, dict):
                         raise TypeError()
-                    match_scores_item_type_2 = UltimateGoalSingleTeamScoreDetails.from_dict(data)
+                    match_scores_item_type_2 = (
+                        UltimateGoalSingleTeamScoreDetails.from_dict(data)
+                    )
 
                     return match_scores_item_type_2
                 except:  # noqa: E722
@@ -142,7 +188,9 @@ class MatchScoreList:
                 try:
                     if not isinstance(data, dict):
                         raise TypeError()
-                    match_scores_item_type_3 = FreightFrenzyAllianceScoreDetails.from_dict(data)
+                    match_scores_item_type_3 = (
+                        FreightFrenzyAllianceScoreDetails.from_dict(data)
+                    )
 
                     return match_scores_item_type_3
                 except:  # noqa: E722
@@ -150,7 +198,9 @@ class MatchScoreList:
                 try:
                     if not isinstance(data, dict):
                         raise TypeError()
-                    match_scores_item_type_4 = FreightFrenzySingleTeamScoreDetails.from_dict(data)
+                    match_scores_item_type_4 = (
+                        FreightFrenzySingleTeamScoreDetails.from_dict(data)
+                    )
 
                     return match_scores_item_type_4
                 except:  # noqa: E722
@@ -158,14 +208,18 @@ class MatchScoreList:
                 try:
                     if not isinstance(data, dict):
                         raise TypeError()
-                    match_scores_item_type_5 = PowerPlayAllianceScoreDetails.from_dict(data)
+                    match_scores_item_type_5 = PowerPlayAllianceScoreDetails.from_dict(
+                        data
+                    )
 
                     return match_scores_item_type_5
                 except:  # noqa: E722
                     pass
                 if not isinstance(data, dict):
                     raise TypeError()
-                match_scores_item_type_6 = PowerPlaySingleTeamScoreDetails.from_dict(data)
+                match_scores_item_type_6 = PowerPlaySingleTeamScoreDetails.from_dict(
+                    data
+                )
 
                 return match_scores_item_type_6
 

@@ -67,11 +67,15 @@ class HybridScheduleMatch:
 
         actual_start_time: Union[Unset, None, str] = UNSET
         if not isinstance(self.actual_start_time, Unset):
-            actual_start_time = self.actual_start_time.isoformat() if self.actual_start_time else None
+            actual_start_time = (
+                self.actual_start_time.isoformat() if self.actual_start_time else None
+            )
 
         post_result_time: Union[Unset, None, str] = UNSET
         if not isinstance(self.post_result_time, Unset):
-            post_result_time = self.post_result_time.isoformat() if self.post_result_time else None
+            post_result_time = (
+                self.post_result_time.isoformat() if self.post_result_time else None
+            )
 
         score_red_final = self.score_red_final
         score_red_foul = self.score_red_foul

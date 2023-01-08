@@ -60,7 +60,9 @@ class SkyStoneScoreDetails:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.sky_stone_alliance_score_details import SkyStoneAllianceScoreDetails
+        from ..models.sky_stone_alliance_score_details import (
+            SkyStoneAllianceScoreDetails,
+        )
 
         d = src_dict.copy()
         _match_level = d.pop("matchLevel", UNSET)

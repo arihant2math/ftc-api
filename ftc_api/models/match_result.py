@@ -51,7 +51,9 @@ class MatchResult:
     def to_dict(self) -> Dict[str, Any]:
         actual_start_time: Union[Unset, None, str] = UNSET
         if not isinstance(self.actual_start_time, Unset):
-            actual_start_time = self.actual_start_time.isoformat() if self.actual_start_time else None
+            actual_start_time = (
+                self.actual_start_time.isoformat() if self.actual_start_time else None
+            )
 
         description = self.description
         tournament_level = self.tournament_level
@@ -65,7 +67,9 @@ class MatchResult:
         score_blue_auto = self.score_blue_auto
         post_result_time: Union[Unset, None, str] = UNSET
         if not isinstance(self.post_result_time, Unset):
-            post_result_time = self.post_result_time.isoformat() if self.post_result_time else None
+            post_result_time = (
+                self.post_result_time.isoformat() if self.post_result_time else None
+            )
 
         teams: Union[Unset, None, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.teams, Unset):

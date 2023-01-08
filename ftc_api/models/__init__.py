@@ -19,7 +19,9 @@ from .field_side import FieldSide
 from .freight_frenzy_alliance_score_breakdown import FreightFrenzyAllianceScoreBreakdown
 from .freight_frenzy_alliance_score_details import FreightFrenzyAllianceScoreDetails
 from .freight_frenzy_remote_score_breakdown import FreightFrenzyRemoteScoreBreakdown
-from .freight_frenzy_single_team_score_details import FreightFrenzySingleTeamScoreDetails
+from .freight_frenzy_single_team_score_details import (
+    FreightFrenzySingleTeamScoreDetails,
+)
 from .ftc_event_level import FTCEventLevel
 from .get_v20_season_schedule_event_code_tournament_level_hybrid_tournament_level import (
     GetV20SeasonScheduleEventCodeTournamentLevelHybridTournamentLevel,

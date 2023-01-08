@@ -6,7 +6,9 @@ from ..models.ftc_event_level import FTCEventLevel
 from .._types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.freight_frenzy_alliance_score_breakdown import FreightFrenzyAllianceScoreBreakdown
+    from ..models.freight_frenzy_alliance_score_breakdown import (
+        FreightFrenzyAllianceScoreBreakdown,
+    )
 
 
 T = TypeVar("T", bound="FreightFrenzyAllianceScoreDetails")
@@ -65,7 +67,9 @@ class FreightFrenzyAllianceScoreDetails:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.freight_frenzy_alliance_score_breakdown import FreightFrenzyAllianceScoreBreakdown
+        from ..models.freight_frenzy_alliance_score_breakdown import (
+            FreightFrenzyAllianceScoreBreakdown,
+        )
 
         d = src_dict.copy()
         _match_level = d.pop("matchLevel", UNSET)
@@ -84,7 +88,9 @@ class FreightFrenzyAllianceScoreDetails:
         alliances = []
         _alliances = d.pop("alliances", UNSET)
         for alliances_item_data in _alliances or []:
-            alliances_item = FreightFrenzyAllianceScoreBreakdown.from_dict(alliances_item_data)
+            alliances_item = FreightFrenzyAllianceScoreBreakdown.from_dict(
+                alliances_item_data
+            )
 
             alliances.append(alliances_item)
 

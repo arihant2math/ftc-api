@@ -58,7 +58,9 @@ class PowerPlaySingleTeamScoreDetails:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.power_play_remote_score_breakdown import PowerPlayRemoteScoreBreakdown
+        from ..models.power_play_remote_score_breakdown import (
+            PowerPlayRemoteScoreBreakdown,
+        )
 
         d = src_dict.copy()
         _match_level = d.pop("matchLevel", UNSET)

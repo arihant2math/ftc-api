@@ -6,7 +6,9 @@ from ..models.ftc_event_level import FTCEventLevel
 from .._types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.freight_frenzy_remote_score_breakdown import FreightFrenzyRemoteScoreBreakdown
+    from ..models.freight_frenzy_remote_score_breakdown import (
+        FreightFrenzyRemoteScoreBreakdown,
+    )
 
 
 T = TypeVar("T", bound="FreightFrenzySingleTeamScoreDetails")
@@ -58,7 +60,9 @@ class FreightFrenzySingleTeamScoreDetails:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.freight_frenzy_remote_score_breakdown import FreightFrenzyRemoteScoreBreakdown
+        from ..models.freight_frenzy_remote_score_breakdown import (
+            FreightFrenzyRemoteScoreBreakdown,
+        )
 
         d = src_dict.copy()
         _match_level = d.pop("matchLevel", UNSET)

@@ -6,7 +6,9 @@ from ..models.ftc_event_level import FTCEventLevel
 from .._types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.ultimate_goal_alliance_score_breakdown import UltimateGoalAllianceScoreBreakdown
+    from ..models.ultimate_goal_alliance_score_breakdown import (
+        UltimateGoalAllianceScoreBreakdown,
+    )
 
 
 T = TypeVar("T", bound="UltimateGoalAllianceScoreDetails")
@@ -60,7 +62,9 @@ class UltimateGoalAllianceScoreDetails:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.ultimate_goal_alliance_score_breakdown import UltimateGoalAllianceScoreBreakdown
+        from ..models.ultimate_goal_alliance_score_breakdown import (
+            UltimateGoalAllianceScoreBreakdown,
+        )
 
         d = src_dict.copy()
         _match_level = d.pop("matchLevel", UNSET)
@@ -77,7 +81,9 @@ class UltimateGoalAllianceScoreDetails:
         alliances = []
         _alliances = d.pop("alliances", UNSET)
         for alliances_item_data in _alliances or []:
-            alliances_item = UltimateGoalAllianceScoreBreakdown.from_dict(alliances_item_data)
+            alliances_item = UltimateGoalAllianceScoreBreakdown.from_dict(
+                alliances_item_data
+            )
 
             alliances.append(alliances_item)
 

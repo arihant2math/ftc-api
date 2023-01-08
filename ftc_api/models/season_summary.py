@@ -30,7 +30,9 @@ class SeasonSummary:
     kickoff: Union[Unset, None, datetime.datetime] = UNSET
     rookie_start: Union[Unset, int] = UNSET
     team_count: Union[Unset, int] = UNSET
-    frc_championships: Union[Unset, None, List["SummaryChampionshipDescription"]] = UNSET
+    frc_championships: Union[
+        Unset, None, List["SummaryChampionshipDescription"]
+    ] = UNSET
 
     def to_dict(self) -> Dict[str, Any]:
         event_count = self.event_count
@@ -71,7 +73,9 @@ class SeasonSummary:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.summary_championship_description import SummaryChampionshipDescription
+        from ..models.summary_championship_description import (
+            SummaryChampionshipDescription,
+        )
 
         d = src_dict.copy()
         event_count = d.pop("eventCount", UNSET)
@@ -94,7 +98,9 @@ class SeasonSummary:
         frc_championships = []
         _frc_championships = d.pop("frcChampionships", UNSET)
         for frc_championships_item_data in _frc_championships or []:
-            frc_championships_item = SummaryChampionshipDescription.from_dict(frc_championships_item_data)
+            frc_championships_item = SummaryChampionshipDescription.from_dict(
+                frc_championships_item_data
+            )
 
             frc_championships.append(frc_championships_item)
 

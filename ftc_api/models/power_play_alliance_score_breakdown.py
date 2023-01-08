@@ -136,10 +136,16 @@ class PowerPlayAllianceScoreBreakdown:
                     auto_junctions_item = []
                     for auto_junctions_item_item_data in auto_junctions_item_data:
                         auto_junctions_item_item = []
-                        for auto_junctions_item_item_item_data in auto_junctions_item_item_data:
-                            auto_junctions_item_item_item = auto_junctions_item_item_item_data.value
+                        for (
+                            auto_junctions_item_item_item_data
+                        ) in auto_junctions_item_item_data:
+                            auto_junctions_item_item_item = (
+                                auto_junctions_item_item_item_data.value
+                            )
 
-                            auto_junctions_item_item.append(auto_junctions_item_item_item)
+                            auto_junctions_item_item.append(
+                                auto_junctions_item_item_item
+                            )
 
                         auto_junctions_item.append(auto_junctions_item_item)
 
@@ -155,8 +161,12 @@ class PowerPlayAllianceScoreBreakdown:
                     dc_junctions_item = []
                     for dc_junctions_item_item_data in dc_junctions_item_data:
                         dc_junctions_item_item = []
-                        for dc_junctions_item_item_item_data in dc_junctions_item_item_data:
-                            dc_junctions_item_item_item = dc_junctions_item_item_item_data.value
+                        for (
+                            dc_junctions_item_item_item_data
+                        ) in dc_junctions_item_item_data:
+                            dc_junctions_item_item_item = (
+                                dc_junctions_item_item_item_data.value
+                            )
 
                             dc_junctions_item_item.append(dc_junctions_item_item_item)
 
@@ -321,7 +331,9 @@ class PowerPlayAllianceScoreBreakdown:
                 auto_junctions_item_item = []
                 _auto_junctions_item_item = auto_junctions_item_item_data
                 for auto_junctions_item_item_item_data in _auto_junctions_item_item:
-                    auto_junctions_item_item_item = JunctionElement(auto_junctions_item_item_item_data)
+                    auto_junctions_item_item_item = JunctionElement(
+                        auto_junctions_item_item_item_data
+                    )
 
                     auto_junctions_item_item.append(auto_junctions_item_item_item)
 
@@ -338,7 +350,9 @@ class PowerPlayAllianceScoreBreakdown:
                 dc_junctions_item_item = []
                 _dc_junctions_item_item = dc_junctions_item_item_data
                 for dc_junctions_item_item_item_data in _dc_junctions_item_item:
-                    dc_junctions_item_item_item = JunctionElement(dc_junctions_item_item_item_data)
+                    dc_junctions_item_item_item = JunctionElement(
+                        dc_junctions_item_item_item_data
+                    )
 
                     dc_junctions_item_item.append(dc_junctions_item_item_item)
 

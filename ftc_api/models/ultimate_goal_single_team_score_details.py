@@ -6,7 +6,9 @@ from ..models.ftc_event_level import FTCEventLevel
 from .._types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.ultimate_goal_single_team_breakdown import UltimateGoalSingleTeamBreakdown
+    from ..models.ultimate_goal_single_team_breakdown import (
+        UltimateGoalSingleTeamBreakdown,
+    )
 
 
 T = TypeVar("T", bound="UltimateGoalSingleTeamScoreDetails")
@@ -53,7 +55,9 @@ class UltimateGoalSingleTeamScoreDetails:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.ultimate_goal_single_team_breakdown import UltimateGoalSingleTeamBreakdown
+        from ..models.ultimate_goal_single_team_breakdown import (
+            UltimateGoalSingleTeamBreakdown,
+        )
 
         d = src_dict.copy()
         _match_level = d.pop("matchLevel", UNSET)

@@ -27,7 +27,9 @@ def _get_kwargs(
     }
 
 
-def _parse_response(*, client: Client, response: httpx.Response) -> Optional[APIInformation]:
+def _parse_response(
+    *, client: Client, response: httpx.Response
+) -> Optional[APIInformation]:
     if response.status_code == HTTPStatus.OK:
         response_200 = APIInformation.from_dict(response.json())
 
@@ -38,7 +40,9 @@ def _parse_response(*, client: Client, response: httpx.Response) -> Optional[API
         return None
 
 
-def _build_response(*, client: Client, response: httpx.Response) -> Response[APIInformation]:
+def _build_response(
+    *, client: Client, response: httpx.Response
+) -> Response[APIInformation]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,

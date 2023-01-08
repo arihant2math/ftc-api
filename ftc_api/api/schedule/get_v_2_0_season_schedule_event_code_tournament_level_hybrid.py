@@ -15,14 +15,19 @@ from ..._types import UNSET, Response, Unset
 def _get_kwargs(
     season: int,
     event_code: Optional[str],
-    tournament_level: Optional[GetV20SeasonScheduleEventCodeTournamentLevelHybridTournamentLevel],
+    tournament_level: Optional[
+        GetV20SeasonScheduleEventCodeTournamentLevelHybridTournamentLevel
+    ],
     *,
     client: Client,
     start: Union[Unset, None, int] = 0,
     end: Union[Unset, None, int] = 999,
 ) -> Dict[str, Any]:
     url = "{}/v2.0/{season}/schedule/{eventCode}/{tournamentLevel}/hybrid".format(
-        "https://ftc-api.firstinspires.org", season=season, eventCode=event_code, tournamentLevel=tournament_level
+        "https://ftc-api.firstinspires.org",
+        season=season,
+        eventCode=event_code,
+        tournamentLevel=tournament_level,
     )
 
     headers: Dict[str, str] = client.get_headers()
@@ -45,7 +50,9 @@ def _get_kwargs(
     }
 
 
-def _parse_response(*, client: Client, response: httpx.Response) -> Optional[Union[Any, HybridSchedule]]:
+def _parse_response(
+    *, client: Client, response: httpx.Response
+) -> Optional[Union[Any, HybridSchedule]]:
     if response.status_code == HTTPStatus.OK:
         response_200 = HybridSchedule.from_dict(response.json())
 
@@ -59,7 +66,9 @@ def _parse_response(*, client: Client, response: httpx.Response) -> Optional[Uni
         return None
 
 
-def _build_response(*, client: Client, response: httpx.Response) -> Response[Union[Any, HybridSchedule]]:
+def _build_response(
+    *, client: Client, response: httpx.Response
+) -> Response[Union[Any, HybridSchedule]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -71,7 +80,9 @@ def _build_response(*, client: Client, response: httpx.Response) -> Response[Uni
 def sync_detailed(
     season: int,
     event_code: Optional[str],
-    tournament_level: Optional[GetV20SeasonScheduleEventCodeTournamentLevelHybridTournamentLevel],
+    tournament_level: Optional[
+        GetV20SeasonScheduleEventCodeTournamentLevelHybridTournamentLevel
+    ],
     *,
     client: Client,
     start: Union[Unset, None, int] = 0,
@@ -120,7 +131,9 @@ def sync_detailed(
 def sync(
     season: int,
     event_code: Optional[str],
-    tournament_level: Optional[GetV20SeasonScheduleEventCodeTournamentLevelHybridTournamentLevel],
+    tournament_level: Optional[
+        GetV20SeasonScheduleEventCodeTournamentLevelHybridTournamentLevel
+    ],
     *,
     client: Client,
     start: Union[Unset, None, int] = 0,
@@ -162,7 +175,9 @@ def sync(
 async def asyncio_detailed(
     season: int,
     event_code: Optional[str],
-    tournament_level: Optional[GetV20SeasonScheduleEventCodeTournamentLevelHybridTournamentLevel],
+    tournament_level: Optional[
+        GetV20SeasonScheduleEventCodeTournamentLevelHybridTournamentLevel
+    ],
     *,
     client: Client,
     start: Union[Unset, None, int] = 0,
@@ -209,7 +224,9 @@ async def asyncio_detailed(
 async def asyncio(
     season: int,
     event_code: Optional[str],
-    tournament_level: Optional[GetV20SeasonScheduleEventCodeTournamentLevelHybridTournamentLevel],
+    tournament_level: Optional[
+        GetV20SeasonScheduleEventCodeTournamentLevelHybridTournamentLevel
+    ],
     *,
     client: Client,
     start: Union[Unset, None, int] = 0,

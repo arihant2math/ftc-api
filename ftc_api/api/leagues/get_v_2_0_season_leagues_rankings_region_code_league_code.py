@@ -17,7 +17,10 @@ def _get_kwargs(
     client: Client,
 ) -> Dict[str, Any]:
     url = "{}/v2.0/{season}/leagues/rankings/{regionCode}/{leagueCode}".format(
-        "https://ftc-api.firstinspires.org", season=season, regionCode=region_code, leagueCode=league_code
+        "https://ftc-api.firstinspires.org",
+        season=season,
+        regionCode=region_code,
+        leagueCode=league_code,
     )
 
     headers: Dict[str, str] = client.get_headers()
@@ -32,7 +35,9 @@ def _get_kwargs(
     }
 
 
-def _parse_response(*, client: Client, response: httpx.Response) -> Optional[Union[Any, EventRankingList]]:
+def _parse_response(
+    *, client: Client, response: httpx.Response
+) -> Optional[Union[Any, EventRankingList]]:
     if response.status_code == HTTPStatus.OK:
         response_200 = EventRankingList.from_dict(response.json())
 
@@ -46,7 +51,9 @@ def _parse_response(*, client: Client, response: httpx.Response) -> Optional[Uni
         return None
 
 
-def _build_response(*, client: Client, response: httpx.Response) -> Response[Union[Any, EventRankingList]]:
+def _build_response(
+    *, client: Client, response: httpx.Response
+) -> Response[Union[Any, EventRankingList]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,

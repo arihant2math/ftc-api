@@ -6,7 +6,9 @@ from ..models.ftc_event_level import FTCEventLevel
 from .._types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.power_play_alliance_score_breakdown import PowerPlayAllianceScoreBreakdown
+    from ..models.power_play_alliance_score_breakdown import (
+        PowerPlayAllianceScoreBreakdown,
+    )
 
 
 T = TypeVar("T", bound="PowerPlayAllianceScoreDetails")
@@ -65,7 +67,9 @@ class PowerPlayAllianceScoreDetails:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.power_play_alliance_score_breakdown import PowerPlayAllianceScoreBreakdown
+        from ..models.power_play_alliance_score_breakdown import (
+            PowerPlayAllianceScoreBreakdown,
+        )
 
         d = src_dict.copy()
         _match_level = d.pop("matchLevel", UNSET)
@@ -84,7 +88,9 @@ class PowerPlayAllianceScoreDetails:
         alliances = []
         _alliances = d.pop("alliances", UNSET)
         for alliances_item_data in _alliances or []:
-            alliances_item = PowerPlayAllianceScoreBreakdown.from_dict(alliances_item_data)
+            alliances_item = PowerPlayAllianceScoreBreakdown.from_dict(
+                alliances_item_data
+            )
 
             alliances.append(alliances_item)
 

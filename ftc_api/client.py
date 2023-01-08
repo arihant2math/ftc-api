@@ -48,4 +48,5 @@ class Client:
 
 class AuthenticatedClient(Client):
     """Deprecated, use Client instead, as it has equivalent functionality, will be removed v1.0.0"""
+
     pass

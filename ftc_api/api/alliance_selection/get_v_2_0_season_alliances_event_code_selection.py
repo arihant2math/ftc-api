@@ -31,7 +31,9 @@ def _get_kwargs(
     }
 
 
-def _parse_response(*, client: Client, response: httpx.Response) -> Optional[Union[AllianceSelectionDetails, Any]]:
+def _parse_response(
+    *, client: Client, response: httpx.Response
+) -> Optional[Union[AllianceSelectionDetails, Any]]:
     if response.status_code == HTTPStatus.OK:
         response_200 = AllianceSelectionDetails.from_dict(response.json())
 
@@ -45,7 +47,9 @@ def _parse_response(*, client: Client, response: httpx.Response) -> Optional[Uni
         return None
 
 
-def _build_response(*, client: Client, response: httpx.Response) -> Response[Union[AllianceSelectionDetails, Any]]:
+def _build_response(
+    *, client: Client, response: httpx.Response
+) -> Response[Union[AllianceSelectionDetails, Any]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
