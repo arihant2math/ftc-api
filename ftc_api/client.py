@@ -1,5 +1,6 @@
 import base64
 import ssl
+import warnings
 from typing import Dict, Union
 
 
@@ -48,5 +49,5 @@ class Client:
 
 class AuthenticatedClient(Client):
     """Deprecated, use Client instead, as it has equivalent functionality, will be removed v1.0.0"""
-
-    pass
+    warnings.warn("Will be removed v1.0.0 switch to Client because the functionality has been merged.",
+                  DeprecationWarning)
