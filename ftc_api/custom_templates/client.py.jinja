@@ -25,6 +25,7 @@ class Client:
     raise_on_unexpected_status: bool = False
     prefix: str = "Basic"
     auth_header_name: str = "Authorization"
+    http2 = True
 
     def __init__(self, token=None, username="", authorization_key=""):
         if token is not None:
