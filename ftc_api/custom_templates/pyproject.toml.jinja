@@ -6,16 +6,16 @@ authors = [
 ]
 license = {file = "LICENSE"}
 readme = "README.md"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
-    "httpx", "python-dateutil"
+    "httpx", "python-dateutil", "attrs"
 ]
 keywords = ["ftc"]
 requires-python = ">=3.7"
 
 [project.optional-dependencies]
 dev = [
-    "black"
+    "black", "sphinx", "furo"
 ]
 
 [build-system]
@@ -23,4 +23,4 @@ requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
-packages = ["ftc_api"]
+packages = ["ftc_api", "ftc_api.api", "ftc_api.models"]

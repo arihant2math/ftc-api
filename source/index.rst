@@ -6,6 +6,7 @@
 Welcome to FTC api's documentation!
 ===================================
 A python client library for accessing FTC Events API
+
 .. important::
     Better api docs, maintained by FIRST, can be found here: https://ftc-events.firstinspires.org/api-docs/index.html
     these docs are for library specific features only

@@ -39,7 +39,7 @@ Or do the same thing with an async version:
     from ftc_api.api.season_data import get_v2_0_season
     import ftc_api
 
-    client = ftc_api.Client(username="test", authorization_key="****-****-****-****")
+    client = ftc_api.Client(username="your username here", authorization_key="****-****-****-****")
     my_data = await get_v2_0_season.asyncio(client=client, season=2022)
     print(my_data.game_name) # POWERPLAY
     # or if you need more info (e.g. status_code)
@@ -58,5 +58,5 @@ _____________________
 4. ``asyncio``: Like ``sync`` but async instead of blocking
 5. ``asyncio_detailed``: Like ``sync_detailed`` but async instead of blocking
 6. All path/query params, and bodies become method arguments
-7. If your endpoint had any tags on it, the first tag will be used as a module name for the function (my_tag above)
-8. Any endpoint which did not have a tag will be in ``ftc_events_api_client.api.default``
+7. If your endpoint had any tags on it, the first tag will be used as a module name for the function
+8. Any endpoint which does have a tag will be in ``ftc_events_api_client.api.default``
