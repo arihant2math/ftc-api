@@ -3,13 +3,13 @@ from typing import Any, Dict, Optional, Union, cast
 
 import httpx
 
-from ftc_api import errors
-from ftc_api.client import AuthenticatedClient, Client
-from ftc_api.models.get_v20_season_schedule_event_code_tournament_level_hybrid_tournament_level import (
+from ... import errors
+from ...client import AuthenticatedClient, Client
+from ...models.get_v20_season_schedule_event_code_tournament_level_hybrid_tournament_level import (
     GetV20SeasonScheduleEventCodeTournamentLevelHybridTournamentLevel,
 )
-from ftc_api.models.hybrid_schedule import HybridSchedule
-from ftc_api.types import UNSET, Response, Unset
+from ...models.hybrid_schedule import HybridSchedule
+from ...types import UNSET, Response, Unset
 
 
 def _get_kwargs(

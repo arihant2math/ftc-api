@@ -3,13 +3,13 @@ from typing import Any, Dict, Optional, Union, cast
 
 import httpx
 
-from ftc_api import errors
-from ftc_api.client import AuthenticatedClient, Client
-from ftc_api.models.get_v20_season_scores_event_code_tournament_level_tournament_level import (
+from ... import errors
+from ...client import AuthenticatedClient, Client
+from ...models.get_v20_season_scores_event_code_tournament_level_tournament_level import (
     GetV20SeasonScoresEventCodeTournamentLevelTournamentLevel,
 )
-from ftc_api.models.match_score_list import MatchScoreList
-from ftc_api.types import UNSET, Response, Unset
+from ...models.match_score_list import MatchScoreList
+from ...types import UNSET, Response, Unset
 
 
 def _get_kwargs(

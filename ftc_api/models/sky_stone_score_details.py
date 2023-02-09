@@ -3,7 +3,7 @@ from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 import attr
 
 from ..models.ftc_event_level import FTCEventLevel
-from ftc_api.types import UNSET, Unset
+from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
     from ..models.sky_stone_alliance_score_details import SkyStoneAllianceScoreDetails

@@ -3,10 +3,10 @@ from typing import Any, Dict, Optional, Union, cast
 
 import httpx
 
-from ftc_api import errors
-from ftc_api.client import AuthenticatedClient, Client
-from ftc_api.models.alliance_selection_details import AllianceSelectionDetails
-from ftc_api.types import Response
+from ... import errors
+from ...client import AuthenticatedClient, Client
+from ...models.alliance_selection_details import AllianceSelectionDetails
+from ...types import Response
 
 
 def _get_kwargs(

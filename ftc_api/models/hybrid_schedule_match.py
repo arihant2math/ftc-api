@@ -4,7 +4,7 @@ from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 import attr
 from dateutil.parser import isoparse
 
-from ftc_api.types import UNSET, Unset
+from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
     from ..models.hybrid_schedule_team import HybridScheduleTeam

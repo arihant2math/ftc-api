@@ -3,7 +3,7 @@ from typing import Any, Dict, Type, TypeVar, Union
 import attr
 
 from ..models.selection_result import SelectionResult
-from ftc_api.types import UNSET, Unset
+from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="Selection")
 

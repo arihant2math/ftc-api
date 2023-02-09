@@ -5,7 +5,7 @@ import attr
 from ..models.auto_navigation import AutoNavigation
 from ..models.field_side import FieldSide
 from ..models.junction_element import JunctionElement
-from ftc_api.types import UNSET, Unset
+from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="PowerPlayAllianceScoreBreakdown")
 

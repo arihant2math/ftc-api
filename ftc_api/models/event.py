@@ -4,7 +4,7 @@ from typing import Any, Dict, List, Type, TypeVar, Union, cast
 import attr
 from dateutil.parser import isoparse
 
-from ftc_api.types import UNSET, Unset
+from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="Event")
 

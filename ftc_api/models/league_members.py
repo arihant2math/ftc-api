@@ -2,7 +2,7 @@ from typing import Any, Dict, List, Type, TypeVar, Union, cast
 
 import attr
 
-from ftc_api.types import UNSET, Unset
+from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="LeagueMembers")
 
