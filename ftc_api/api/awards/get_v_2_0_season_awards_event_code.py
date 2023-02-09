@@ -3,17 +3,17 @@ from typing import Any, Dict, Optional, Union, cast
 
 import httpx
 
-from ... import errors
-from ...client import Client
-from ...models.award_assignment_list import AwardAssignmentList
-from ..._types import UNSET, Response, Unset
+from ftc_api import errors
+from ftc_api.client import AuthenticatedClient, Client
+from ftc_api.models.award_assignment_list import AwardAssignmentList
+from ftc_api.types import UNSET, Response, Unset
 
 
 def _get_kwargs(
     season: int,
     event_code: Optional[str] = "",
     *,
-    client: Client,
+    client: AuthenticatedClient,
     team_number: Union[Unset, None, int] = 0,
 ) -> Dict[str, Any]:
     url = "{}/v2.0/{season}/awards/{eventCode}".format(
@@ -69,7 +69,7 @@ def sync_detailed(
     season: int,
     event_code: Optional[str] = "",
     *,
-    client: Client,
+    client: AuthenticatedClient,
     team_number: Union[Unset, None, int] = 0,
 ) -> Response[Union[Any, AwardAssignmentList]]:
     """Event Awards
@@ -115,7 +115,7 @@ def sync(
     season: int,
     event_code: Optional[str] = "",
     *,
-    client: Client,
+    client: AuthenticatedClient,
     team_number: Union[Unset, None, int] = 0,
 ) -> Optional[Union[Any, AwardAssignmentList]]:
     """Event Awards
@@ -154,7 +154,7 @@ async def asyncio_detailed(
     season: int,
     event_code: Optional[str] = "",
     *,
-    client: Client,
+    client: AuthenticatedClient,
     team_number: Union[Unset, None, int] = 0,
 ) -> Response[Union[Any, AwardAssignmentList]]:
     """Event Awards
@@ -198,7 +198,7 @@ async def asyncio(
     season: int,
     event_code: Optional[str] = "",
     *,
-    client: Client,
+    client: AuthenticatedClient,
     team_number: Union[Unset, None, int] = 0,
 ) -> Optional[Union[Any, AwardAssignmentList]]:
     """Event Awards

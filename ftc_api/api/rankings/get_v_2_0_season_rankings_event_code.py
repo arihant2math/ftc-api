@@ -3,17 +3,17 @@ from typing import Any, Dict, Optional, Union, cast
 
 import httpx
 
-from ... import errors
-from ...client import Client
-from ...models.event_ranking_list import EventRankingList
-from ..._types import UNSET, Response, Unset
+from ftc_api import errors
+from ftc_api.client import AuthenticatedClient, Client
+from ftc_api.models.event_ranking_list import EventRankingList
+from ftc_api.types import UNSET, Response, Unset
 
 
 def _get_kwargs(
     season: int,
     event_code: Optional[str],
     *,
-    client: Client,
+    client: AuthenticatedClient,
     team_number: Union[Unset, None, int] = 0,
     top: Union[Unset, None, int] = 0,
 ) -> Dict[str, Any]:
@@ -72,7 +72,7 @@ def sync_detailed(
     season: int,
     event_code: Optional[str],
     *,
-    client: Client,
+    client: AuthenticatedClient,
     team_number: Union[Unset, None, int] = 0,
     top: Union[Unset, None, int] = 0,
 ) -> Response[Union[Any, EventRankingList]]:
@@ -118,7 +118,7 @@ def sync(
     season: int,
     event_code: Optional[str],
     *,
-    client: Client,
+    client: AuthenticatedClient,
     team_number: Union[Unset, None, int] = 0,
     top: Union[Unset, None, int] = 0,
 ) -> Optional[Union[Any, EventRankingList]]:
@@ -157,7 +157,7 @@ async def asyncio_detailed(
     season: int,
     event_code: Optional[str],
     *,
-    client: Client,
+    client: AuthenticatedClient,
     team_number: Union[Unset, None, int] = 0,
     top: Union[Unset, None, int] = 0,
 ) -> Response[Union[Any, EventRankingList]]:
@@ -201,7 +201,7 @@ async def asyncio(
     season: int,
     event_code: Optional[str],
     *,
-    client: Client,
+    client: AuthenticatedClient,
     team_number: Union[Unset, None, int] = 0,
     top: Union[Unset, None, int] = 0,
 ) -> Optional[Union[Any, EventRankingList]]:

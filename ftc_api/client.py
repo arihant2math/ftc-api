@@ -49,5 +49,8 @@ class Client:
 
 class AuthenticatedClient(Client):
     """Deprecated, use Client instead, as it has equivalent functionality, will be removed v1.0.0"""
-    warnings.warn("Will be removed v1.0.0 switch to Client because the functionality has been merged.",
-                  DeprecationWarning)
+
+    warnings.warn(
+        "Will be removed v1.0.0 switch to Client because the functionality has been merged.",
+        DeprecationWarning,
+    )

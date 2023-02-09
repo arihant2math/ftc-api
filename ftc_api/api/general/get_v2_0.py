@@ -3,10 +3,10 @@ from typing import Any, Dict, Optional
 
 import httpx
 
-from ... import errors
-from ...client import Client
-from ...models.api_information import APIInformation
-from ..._types import Response
+from ftc_api import errors
+from ftc_api.client import Client
+from ftc_api.models.api_information import APIInformation
+from ftc_api.types import Response
 
 
 def _get_kwargs(

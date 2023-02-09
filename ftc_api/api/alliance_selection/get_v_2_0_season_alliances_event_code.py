@@ -3,17 +3,17 @@ from typing import Any, Dict, Optional, Union, cast
 
 import httpx
 
-from ... import errors
-from ...client import Client
-from ...models.alliance_selection import AllianceSelection
-from ..._types import Response
+from ftc_api import errors
+from ftc_api.client import AuthenticatedClient, Client
+from ftc_api.models.alliance_selection import AllianceSelection
+from ftc_api.types import Response
 
 
 def _get_kwargs(
     season: int,
     event_code: Optional[str],
     *,
-    client: Client,
+    client: AuthenticatedClient,
 ) -> Dict[str, Any]:
     url = "{}/v2.0/{season}/alliances/{eventCode}".format(
         "https://ftc-api.firstinspires.org", season=season, eventCode=event_code
@@ -62,7 +62,7 @@ def sync_detailed(
     season: int,
     event_code: Optional[str],
     *,
-    client: Client,
+    client: AuthenticatedClient,
 ) -> Response[Union[AllianceSelection, Any]]:
     """Event Alliances
 
@@ -99,7 +99,7 @@ def sync(
     season: int,
     event_code: Optional[str],
     *,
-    client: Client,
+    client: AuthenticatedClient,
 ) -> Optional[Union[AllianceSelection, Any]]:
     """Event Alliances
 
@@ -129,7 +129,7 @@ async def asyncio_detailed(
     season: int,
     event_code: Optional[str],
     *,
-    client: Client,
+    client: AuthenticatedClient,
 ) -> Response[Union[AllianceSelection, Any]]:
     """Event Alliances
 
@@ -164,7 +164,7 @@ async def asyncio(
     season: int,
     event_code: Optional[str],
     *,
-    client: Client,
+    client: AuthenticatedClient,
 ) -> Optional[Union[AllianceSelection, Any]]:
     """Event Alliances
 

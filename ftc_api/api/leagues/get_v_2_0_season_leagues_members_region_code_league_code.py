@@ -3,10 +3,10 @@ from typing import Any, Dict, Optional, Union, cast
 
 import httpx
 
-from ... import errors
-from ...client import Client
-from ...models.league_members import LeagueMembers
-from ..._types import Response
+from ftc_api import errors
+from ftc_api.client import AuthenticatedClient, Client
+from ftc_api.models.league_members import LeagueMembers
+from ftc_api.types import Response
 
 
 def _get_kwargs(
@@ -14,7 +14,7 @@ def _get_kwargs(
     region_code: Optional[str],
     league_code: Optional[str],
     *,
-    client: Client,
+    client: AuthenticatedClient,
 ) -> Dict[str, Any]:
     url = "{}/v2.0/{season}/leagues/members/{regionCode}/{leagueCode}".format(
         "https://ftc-api.firstinspires.org",
@@ -67,7 +67,7 @@ def sync_detailed(
     region_code: Optional[str],
     league_code: Optional[str],
     *,
-    client: Client,
+    client: AuthenticatedClient,
 ) -> Response[Union[Any, LeagueMembers]]:
     """League Membership
 
@@ -107,7 +107,7 @@ def sync(
     region_code: Optional[str],
     league_code: Optional[str],
     *,
-    client: Client,
+    client: AuthenticatedClient,
 ) -> Optional[Union[Any, LeagueMembers]]:
     """League Membership
 
@@ -140,7 +140,7 @@ async def asyncio_detailed(
     region_code: Optional[str],
     league_code: Optional[str],
     *,
-    client: Client,
+    client: AuthenticatedClient,
 ) -> Response[Union[Any, LeagueMembers]]:
     """League Membership
 
@@ -178,7 +178,7 @@ async def asyncio(
     region_code: Optional[str],
     league_code: Optional[str],
     *,
-    client: Client,
+    client: AuthenticatedClient,
 ) -> Optional[Union[Any, LeagueMembers]]:
     """League Membership
 

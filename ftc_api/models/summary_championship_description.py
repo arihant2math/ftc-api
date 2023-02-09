@@ -4,7 +4,7 @@ from typing import Any, Dict, Type, TypeVar, Union
 import attr
 from dateutil.parser import isoparse
 
-from .._types import UNSET, Unset
+from ftc_api.types import UNSET, Unset
 
 T = TypeVar("T", bound="SummaryChampionshipDescription")
 

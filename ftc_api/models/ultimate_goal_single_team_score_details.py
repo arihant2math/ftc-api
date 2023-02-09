@@ -3,7 +3,7 @@ from typing import TYPE_CHECKING, Any, Dict, Type, TypeVar, Union
 import attr
 
 from ..models.ftc_event_level import FTCEventLevel
-from .._types import UNSET, Unset
+from ftc_api.types import UNSET, Unset
 
 if TYPE_CHECKING:
     from ..models.ultimate_goal_single_team_breakdown import (

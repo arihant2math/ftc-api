@@ -3,16 +3,16 @@ from typing import Any, Dict, Optional, Union, cast
 
 import httpx
 
-from ... import errors
-from ...client import Client
-from ...models.team_list import TeamList
-from ..._types import UNSET, Response, Unset
+from ftc_api import errors
+from ftc_api.client import AuthenticatedClient, Client
+from ftc_api.models.team_list import TeamList
+from ftc_api.types import UNSET, Response, Unset
 
 
 def _get_kwargs(
     season: int,
     *,
-    client: Client,
+    client: AuthenticatedClient,
     team_number: Union[Unset, None, int] = 0,
     event_code: Union[Unset, None, str] = "0",
     state: Union[Unset, None, str] = "",
@@ -76,7 +76,7 @@ def _build_response(
 def sync_detailed(
     season: int,
     *,
-    client: Client,
+    client: AuthenticatedClient,
     team_number: Union[Unset, None, int] = 0,
     event_code: Union[Unset, None, str] = "0",
     state: Union[Unset, None, str] = "",
@@ -129,7 +129,7 @@ def sync_detailed(
 def sync(
     season: int,
     *,
-    client: Client,
+    client: AuthenticatedClient,
     team_number: Union[Unset, None, int] = 0,
     event_code: Union[Unset, None, str] = "0",
     state: Union[Unset, None, str] = "",
@@ -175,7 +175,7 @@ def sync(
 async def asyncio_detailed(
     season: int,
     *,
-    client: Client,
+    client: AuthenticatedClient,
     team_number: Union[Unset, None, int] = 0,
     event_code: Union[Unset, None, str] = "0",
     state: Union[Unset, None, str] = "",
@@ -226,7 +226,7 @@ async def asyncio_detailed(
 async def asyncio(
     season: int,
     *,
-    client: Client,
+    client: AuthenticatedClient,
     team_number: Union[Unset, None, int] = 0,
     event_code: Union[Unset, None, str] = "0",
     state: Union[Unset, None, str] = "",
