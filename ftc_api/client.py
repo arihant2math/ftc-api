@@ -16,6 +16,7 @@ class Client:
             but can be set to False for testing purposes.
         raise_on_unexpected_status: Whether or not to raise an errors.UnexpectedStatus if the API returns a
             status code that was not documented in the source OpenAPI document.
+        http2: Whether or not to use http2, enabled by default.
     """
 
     cookies = {}
@@ -25,6 +26,7 @@ class Client:
     raise_on_unexpected_status: bool = False
     prefix: str = "Basic"
     auth_header_name: str = "Authorization"
+    http2 = True
 
     def __init__(self, token=None, username="", authorization_key=""):
         if token is not None:
