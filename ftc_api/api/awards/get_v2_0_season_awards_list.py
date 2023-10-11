@@ -27,7 +27,6 @@ def _get_kwargs(
         "headers": headers,
         "cookies": cookies,
         "timeout": client.get_timeout(),
-        "http2": client.http2,
     }
 
 
