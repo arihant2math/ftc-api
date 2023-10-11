@@ -2,11 +2,11 @@ from typing import Any, Dict, Type, TypeVar
 
 import attr
 
-T = TypeVar("T", bound="PowerPlayRemoteScoreBreakdown")
+T = TypeVar("T", bound="GeometryOverlay")
 
 
 @attr.s(auto_attribs=True)
-class PowerPlayRemoteScoreBreakdown:
+class GeometryOverlay:
     """ """
 
     def to_dict(self) -> Dict[str, Any]:
@@ -18,6 +18,6 @@ class PowerPlayRemoteScoreBreakdown:
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         src_dict.copy()
-        power_play_remote_score_breakdown = cls()
+        geometry_overlay = cls()
 
-        return power_play_remote_score_breakdown
+        return geometry_overlay

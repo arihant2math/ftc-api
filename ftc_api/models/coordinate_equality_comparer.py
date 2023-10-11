@@ -2,11 +2,11 @@ from typing import Any, Dict, Type, TypeVar
 
 import attr
 
-T = TypeVar("T", bound="PowerPlayRemoteScoreBreakdown")
+T = TypeVar("T", bound="CoordinateEqualityComparer")
 
 
 @attr.s(auto_attribs=True)
-class PowerPlayRemoteScoreBreakdown:
+class CoordinateEqualityComparer:
     """ """
 
     def to_dict(self) -> Dict[str, Any]:
@@ -18,6 +18,6 @@ class PowerPlayRemoteScoreBreakdown:
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         src_dict.copy()
-        power_play_remote_score_breakdown = cls()
+        coordinate_equality_comparer = cls()
 
-        return power_play_remote_score_breakdown
+        return coordinate_equality_comparer

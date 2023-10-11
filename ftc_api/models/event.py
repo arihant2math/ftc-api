@@ -1,10 +1,14 @@
 import datetime
-from typing import Any, Dict, List, Type, TypeVar, Union, cast
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union, cast
 
 import attr
 from dateutil.parser import isoparse
 
 from ..types import UNSET, Unset
+
+if TYPE_CHECKING:
+    from ..models.point import Point
+
 
 T = TypeVar("T", bound="Event")
 
@@ -33,6 +37,7 @@ class Event:
         country (Union[Unset, None, str]):
         website (Union[Unset, None, str]):
         live_stream_url (Union[Unset, None, str]):
+        coordinates (Union[Unset, Point]):
         webcasts (Union[Unset, None, List[str]]):
         timezone (Union[Unset, None, str]):
         date_start (Union[Unset, datetime.datetime]):
@@ -59,6 +64,7 @@ class Event:
     country: Union[Unset, None, str] = UNSET
     website: Union[Unset, None, str] = UNSET
     live_stream_url: Union[Unset, None, str] = UNSET
+    coordinates: Union[Unset, "Point"] = UNSET
     webcasts: Union[Unset, None, List[str]] = UNSET
     timezone: Union[Unset, None, str] = UNSET
     date_start: Union[Unset, datetime.datetime] = UNSET
@@ -85,6 +91,10 @@ class Event:
         country = self.country
         website = self.website
         live_stream_url = self.live_stream_url
+        coordinates: Union[Unset, Dict[str, Any]] = UNSET
+        if not isinstance(self.coordinates, Unset):
+            coordinates = self.coordinates.to_dict()
+
         webcasts: Union[Unset, None, List[str]] = UNSET
         if not isinstance(self.webcasts, Unset):
             if self.webcasts is None:
@@ -143,6 +153,8 @@ class Event:
             field_dict["website"] = website
         if live_stream_url is not UNSET:
             field_dict["liveStreamUrl"] = live_stream_url
+        if coordinates is not UNSET:
+            field_dict["coordinates"] = coordinates
         if webcasts is not UNSET:
             field_dict["webcasts"] = webcasts
         if timezone is not UNSET:
@@ -156,6 +168,8 @@ class Event:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+        from ..models.point import Point
+
         d = src_dict.copy()
         event_id = d.pop("eventId", UNSET)
 
@@ -197,6 +211,13 @@ class Event:
 
         live_stream_url = d.pop("liveStreamUrl", UNSET)
 
+        _coordinates = d.pop("coordinates", UNSET)
+        coordinates: Union[Unset, Point]
+        if isinstance(_coordinates, Unset):
+            coordinates = UNSET
+        else:
+            coordinates = Point.from_dict(_coordinates)
+
         webcasts = cast(List[str], d.pop("webcasts", UNSET))
 
         timezone = d.pop("timezone", UNSET)
@@ -236,6 +257,7 @@ class Event:
             country=country,
             website=website,
             live_stream_url=live_stream_url,
+            coordinates=coordinates,
             webcasts=webcasts,
             timezone=timezone,
             date_start=date_start,

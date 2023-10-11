@@ -11,7 +11,13 @@ from .award_assignment import AwardAssignment
 from .award_assignment_list import AwardAssignmentList
 from .award_list import AwardList
 from .barcode_element import BarcodeElement
+from .coordinate import Coordinate
+from .coordinate_equality_comparer import CoordinateEqualityComparer
+from .coordinate_sequence import CoordinateSequence
+from .coordinate_sequence_factory import CoordinateSequenceFactory
+from .dimension import Dimension
 from .endgame_parked_status import EndgameParkedStatus
+from .envelope import Envelope
 from .event import Event
 from .event_list import EventList
 from .event_ranking_list import EventRankingList
@@ -23,6 +29,9 @@ from .freight_frenzy_single_team_score_details import (
     FreightFrenzySingleTeamScoreDetails,
 )
 from .ftc_event_level import FTCEventLevel
+from .geometry import Geometry
+from .geometry_factory import GeometryFactory
+from .geometry_overlay import GeometryOverlay
 from .get_v20_season_schedule_event_code_tournament_level_hybrid_tournament_level import (
     GetV20SeasonScheduleEventCodeTournamentLevelHybridTournamentLevel,
 )
@@ -40,10 +49,16 @@ from .match_result import MatchResult
 from .match_result_list import MatchResultList
 from .match_result_team import MatchResultTeam
 from .match_score_list import MatchScoreList
+from .nts_geometry_services import NtsGeometryServices
+from .ogc_geometry_type import OgcGeometryType
+from .ordinates import Ordinates
+from .point import Point
 from .power_play_alliance_score_breakdown import PowerPlayAllianceScoreBreakdown
 from .power_play_alliance_score_details import PowerPlayAllianceScoreDetails
 from .power_play_remote_score_breakdown import PowerPlayRemoteScoreBreakdown
 from .power_play_single_team_score_details import PowerPlaySingleTeamScoreDetails
+from .precision_model import PrecisionModel
+from .precision_models import PrecisionModels
 from .scheduled_match import ScheduledMatch
 from .scheduled_match_list import ScheduledMatchList
 from .scheduled_match_team import ScheduledMatchTeam
@@ -74,7 +89,13 @@ __all__ = (
     "AwardAssignmentList",
     "AwardList",
     "BarcodeElement",
+    "Coordinate",
+    "CoordinateEqualityComparer",
+    "CoordinateSequence",
+    "CoordinateSequenceFactory",
+    "Dimension",
     "EndgameParkedStatus",
+    "Envelope",
     "Event",
     "EventList",
     "EventRankingList",
@@ -84,6 +105,9 @@ __all__ = (
     "FreightFrenzyRemoteScoreBreakdown",
     "FreightFrenzySingleTeamScoreDetails",
     "FTCEventLevel",
+    "Geometry",
+    "GeometryFactory",
+    "GeometryOverlay",
     "GetV20SeasonScheduleEventCodeTournamentLevelHybridTournamentLevel",
     "GetV20SeasonScoresEventCodeTournamentLevelTournamentLevel",
     "HybridSchedule",
@@ -97,10 +121,16 @@ __all__ = (
     "MatchResultList",
     "MatchResultTeam",
     "MatchScoreList",
+    "NtsGeometryServices",
+    "OgcGeometryType",
+    "Ordinates",
+    "Point",
     "PowerPlayAllianceScoreBreakdown",
     "PowerPlayAllianceScoreDetails",
     "PowerPlayRemoteScoreBreakdown",
     "PowerPlaySingleTeamScoreDetails",
+    "PrecisionModel",
+    "PrecisionModels",
     "ScheduledMatch",
     "ScheduledMatchList",
     "ScheduledMatchTeam",

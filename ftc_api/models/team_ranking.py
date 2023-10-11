@@ -13,6 +13,7 @@ class TeamRanking:
     Attributes:
         rank (Union[Unset, int]):
         team_number (Union[Unset, int]):
+        team_name (Union[Unset, None, str]):
         sort_order_1 (Union[Unset, float]):
         sort_order_2 (Union[Unset, float]):
         sort_order_3 (Union[Unset, float]):
@@ -30,6 +31,7 @@ class TeamRanking:
 
     rank: Union[Unset, int] = UNSET
     team_number: Union[Unset, int] = UNSET
+    team_name: Union[Unset, None, str] = UNSET
     sort_order_1: Union[Unset, float] = UNSET
     sort_order_2: Union[Unset, float] = UNSET
     sort_order_3: Union[Unset, float] = UNSET
@@ -47,6 +49,7 @@ class TeamRanking:
     def to_dict(self) -> Dict[str, Any]:
         rank = self.rank
         team_number = self.team_number
+        team_name = self.team_name
         sort_order_1 = self.sort_order_1
         sort_order_2 = self.sort_order_2
         sort_order_3 = self.sort_order_3
@@ -67,6 +70,8 @@ class TeamRanking:
             field_dict["rank"] = rank
         if team_number is not UNSET:
             field_dict["teamNumber"] = team_number
+        if team_name is not UNSET:
+            field_dict["teamName"] = team_name
         if sort_order_1 is not UNSET:
             field_dict["sortOrder1"] = sort_order_1
         if sort_order_2 is not UNSET:
@@ -103,6 +108,8 @@ class TeamRanking:
 
         team_number = d.pop("teamNumber", UNSET)
 
+        team_name = d.pop("teamName", UNSET)
+
         sort_order_1 = d.pop("sortOrder1", UNSET)
 
         sort_order_2 = d.pop("sortOrder2", UNSET)
@@ -132,6 +139,7 @@ class TeamRanking:
         team_ranking = cls(
             rank=rank,
             team_number=team_number,
+            team_name=team_name,
             sort_order_1=sort_order_1,
             sort_order_2=sort_order_2,
             sort_order_3=sort_order_3,

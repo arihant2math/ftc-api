@@ -2,11 +2,11 @@
 name = "ftc_api"
 description = "A python client to access the FIRST Tech Challenge API"
 authors = [
-    {name = "Ashwin Naren", email="arihant2math@gmail.com"}
+    { name = "Ashwin Naren", email = "arihant2math@gmail.com" }
 ]
-license = {file = "LICENSE"}
+license = { file = "LICENSE" }
 readme = "README.md"
-version = "0.2.0"
+version = "0.3.0"
 dependencies = [
     "httpx[http2]", "python-dateutil", "attrs"
 ]
@@ -27,3 +27,9 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
 packages = ["ftc_api", "ftc_api.api", "ftc_api.models"]
+
+[project.urls]
+"Homepage" = "https://arihant2math.github.io/ftc-api/"
+"Repository" = "https://github.com/arihant2math/ftc-api.git"
+"Documentation" = "https://arihant2math.github.io/ftc-api/"
+"Bug Tracker" = "https://github.com/arihant2math/ftc-api/issues"

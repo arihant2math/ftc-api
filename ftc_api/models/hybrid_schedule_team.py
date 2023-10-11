@@ -17,6 +17,7 @@ class HybridScheduleTeam:
         no_show (Union[Unset, bool]):
         dq (Union[Unset, None, bool]):
         on_field (Union[Unset, None, bool]):
+        team_name (Union[Unset, None, str]):
     """
 
     team_number: Union[Unset, None, int] = UNSET
@@ -25,6 +26,7 @@ class HybridScheduleTeam:
     no_show: Union[Unset, bool] = UNSET
     dq: Union[Unset, None, bool] = UNSET
     on_field: Union[Unset, None, bool] = UNSET
+    team_name: Union[Unset, None, str] = UNSET
 
     def to_dict(self) -> Dict[str, Any]:
         team_number = self.team_number
@@ -33,6 +35,7 @@ class HybridScheduleTeam:
         no_show = self.no_show
         dq = self.dq
         on_field = self.on_field
+        team_name = self.team_name
 
         field_dict: Dict[str, Any] = {}
         field_dict.update({})
@@ -48,6 +51,8 @@ class HybridScheduleTeam:
             field_dict["dq"] = dq
         if on_field is not UNSET:
             field_dict["onField"] = on_field
+        if team_name is not UNSET:
+            field_dict["teamName"] = team_name
 
         return field_dict
 
@@ -66,6 +71,8 @@ class HybridScheduleTeam:
 
         on_field = d.pop("onField", UNSET)
 
+        team_name = d.pop("teamName", UNSET)
+
         hybrid_schedule_team = cls(
             team_number=team_number,
             station=station,
@@ -73,6 +80,7 @@ class HybridScheduleTeam:
             no_show=no_show,
             dq=dq,
             on_field=on_field,
+            team_name=team_name,
         )
 
         return hybrid_schedule_team
