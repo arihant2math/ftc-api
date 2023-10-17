@@ -27,8 +27,9 @@ dev = [
 requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
-[tool.setuptools]
-packages = ["ftc_api"]
+[tool.setuptools.packages.find]
+include = ["autotraders*"]
+exclude = ["source*", "tests*", "venv*", "custom_templates*"]
 
 [project.urls]
 "Homepage" = "https://arihant2math.github.io/ftc-api/"
