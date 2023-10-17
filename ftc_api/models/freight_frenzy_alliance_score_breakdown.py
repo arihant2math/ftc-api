@@ -1,6 +1,6 @@
 from typing import Any, Dict, Type, TypeVar, Union
 
-import attr
+from attrs import define as _attrs_define
 
 from ..models.auto_navigated_status import AutoNavigatedStatus
 from ..models.barcode_element import BarcodeElement
@@ -10,7 +10,7 @@ from ..types import UNSET, Unset
 T = TypeVar("T", bound="FreightFrenzyAllianceScoreBreakdown")
 
 
-@attr.s(auto_attribs=True)
+@_attrs_define
 class FreightFrenzyAllianceScoreBreakdown:
     """
     Attributes:
@@ -149,9 +149,7 @@ class FreightFrenzyAllianceScoreBreakdown:
         auto_navigation_points = self.auto_navigation_points
         auto_freight_points = self.auto_freight_points
         auto_bonus_points = self.auto_bonus_points
-        driver_controlled_alliance_hub_points = (
-            self.driver_controlled_alliance_hub_points
-        )
+        driver_controlled_alliance_hub_points = self.driver_controlled_alliance_hub_points
         driver_controlled_shared_hub_points = self.driver_controlled_shared_hub_points
         driver_controlled_storage_points = self.driver_controlled_storage_points
         endgame_delivery_points = self.endgame_delivery_points
@@ -192,9 +190,7 @@ class FreightFrenzyAllianceScoreBreakdown:
         if auto_freight_3 is not UNSET:
             field_dict["autoFreight3"] = auto_freight_3
         if driver_controlled_storage_freight is not UNSET:
-            field_dict[
-                "driverControlledStorageFreight"
-            ] = driver_controlled_storage_freight
+            field_dict["driverControlledStorageFreight"] = driver_controlled_storage_freight
         if driver_controlled_freight_1 is not UNSET:
             field_dict["driverControlledFreight1"] = driver_controlled_freight_1
         if driver_controlled_freight_2 is not UNSET:
@@ -228,17 +224,11 @@ class FreightFrenzyAllianceScoreBreakdown:
         if auto_bonus_points is not UNSET:
             field_dict["autoBonusPoints"] = auto_bonus_points
         if driver_controlled_alliance_hub_points is not UNSET:
-            field_dict[
-                "driverControlledAllianceHubPoints"
-            ] = driver_controlled_alliance_hub_points
+            field_dict["driverControlledAllianceHubPoints"] = driver_controlled_alliance_hub_points
         if driver_controlled_shared_hub_points is not UNSET:
-            field_dict[
-                "driverControlledSharedHubPoints"
-            ] = driver_controlled_shared_hub_points
+            field_dict["driverControlledSharedHubPoints"] = driver_controlled_shared_hub_points
         if driver_controlled_storage_points is not UNSET:
-            field_dict[
-                "driverControlledStoragePoints"
-            ] = driver_controlled_storage_points
+            field_dict["driverControlledStoragePoints"] = driver_controlled_storage_points
         if endgame_delivery_points is not UNSET:
             field_dict["endgameDeliveryPoints"] = endgame_delivery_points
         if alliance_balanced_points is not UNSET:
@@ -309,9 +299,7 @@ class FreightFrenzyAllianceScoreBreakdown:
 
         auto_freight_3 = d.pop("autoFreight3", UNSET)
 
-        driver_controlled_storage_freight = d.pop(
-            "driverControlledStorageFreight", UNSET
-        )
+        driver_controlled_storage_freight = d.pop("driverControlledStorageFreight", UNSET)
 
         driver_controlled_freight_1 = d.pop("driverControlledFreight1", UNSET)
 
@@ -355,13 +343,9 @@ class FreightFrenzyAllianceScoreBreakdown:
 
         auto_bonus_points = d.pop("autoBonusPoints", UNSET)
 
-        driver_controlled_alliance_hub_points = d.pop(
-            "driverControlledAllianceHubPoints", UNSET
-        )
+        driver_controlled_alliance_hub_points = d.pop("driverControlledAllianceHubPoints", UNSET)
 
-        driver_controlled_shared_hub_points = d.pop(
-            "driverControlledSharedHubPoints", UNSET
-        )
+        driver_controlled_shared_hub_points = d.pop("driverControlledSharedHubPoints", UNSET)
 
         driver_controlled_storage_points = d.pop("driverControlledStoragePoints", UNSET)
 

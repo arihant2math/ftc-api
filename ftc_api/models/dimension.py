@@ -2,11 +2,11 @@ from enum import Enum
 
 
 class Dimension(str, Enum):
-    P = "P"
-    CURVE = "Curve"
     A = "A"
     COLLAPSE = "Collapse"
+    CURVE = "Curve"
     DONTCARE = "Dontcare"
+    P = "P"
     TRUE = "True"
     UNKNOWN = "Unknown"
 

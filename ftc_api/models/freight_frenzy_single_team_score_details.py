@@ -1,20 +1,18 @@
 from typing import TYPE_CHECKING, Any, Dict, Type, TypeVar, Union
 
-import attr
+from attrs import define as _attrs_define
 
 from ..models.ftc_event_level import FTCEventLevel
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.freight_frenzy_remote_score_breakdown import (
-        FreightFrenzyRemoteScoreBreakdown,
-    )
+    from ..models.freight_frenzy_remote_score_breakdown import FreightFrenzyRemoteScoreBreakdown
 
 
 T = TypeVar("T", bound="FreightFrenzySingleTeamScoreDetails")
 
 
-@attr.s(auto_attribs=True)
+@_attrs_define
 class FreightFrenzySingleTeamScoreDetails:
     """
     Attributes:
@@ -60,9 +58,7 @@ class FreightFrenzySingleTeamScoreDetails:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.freight_frenzy_remote_score_breakdown import (
-            FreightFrenzyRemoteScoreBreakdown,
-        )
+        from ..models.freight_frenzy_remote_score_breakdown import FreightFrenzyRemoteScoreBreakdown
 
         d = src_dict.copy()
         _match_level = d.pop("matchLevel", UNSET)

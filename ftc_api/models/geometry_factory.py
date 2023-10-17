@@ -1,6 +1,6 @@
 from typing import TYPE_CHECKING, Any, Dict, Type, TypeVar, Union
 
-import attr
+from attrs import define as _attrs_define
 
 from ..types import UNSET, Unset
 
@@ -13,7 +13,7 @@ if TYPE_CHECKING:
 T = TypeVar("T", bound="GeometryFactory")
 
 
-@attr.s(auto_attribs=True)
+@_attrs_define
 class GeometryFactory:
     """
     Attributes:
@@ -74,9 +74,7 @@ class GeometryFactory:
         if isinstance(_coordinate_sequence_factory, Unset):
             coordinate_sequence_factory = UNSET
         else:
-            coordinate_sequence_factory = CoordinateSequenceFactory.from_dict(
-                _coordinate_sequence_factory
-            )
+            coordinate_sequence_factory = CoordinateSequenceFactory.from_dict(_coordinate_sequence_factory)
 
         srid = d.pop("srid", UNSET)
 

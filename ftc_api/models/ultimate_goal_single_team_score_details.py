@@ -1,20 +1,18 @@
 from typing import TYPE_CHECKING, Any, Dict, Type, TypeVar, Union
 
-import attr
+from attrs import define as _attrs_define
 
 from ..models.ftc_event_level import FTCEventLevel
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.ultimate_goal_single_team_breakdown import (
-        UltimateGoalSingleTeamBreakdown,
-    )
+    from ..models.ultimate_goal_single_team_breakdown import UltimateGoalSingleTeamBreakdown
 
 
 T = TypeVar("T", bound="UltimateGoalSingleTeamScoreDetails")
 
 
-@attr.s(auto_attribs=True)
+@_attrs_define
 class UltimateGoalSingleTeamScoreDetails:
     """
     Attributes:
@@ -55,9 +53,7 @@ class UltimateGoalSingleTeamScoreDetails:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.ultimate_goal_single_team_breakdown import (
-            UltimateGoalSingleTeamBreakdown,
-        )
+        from ..models.ultimate_goal_single_team_breakdown import UltimateGoalSingleTeamBreakdown
 
         d = src_dict.copy()
         _match_level = d.pop("matchLevel", UNSET)

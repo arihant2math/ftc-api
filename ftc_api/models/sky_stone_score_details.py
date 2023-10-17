@@ -1,6 +1,6 @@
 from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
-import attr
+from attrs import define as _attrs_define
 
 from ..models.ftc_event_level import FTCEventLevel
 from ..types import UNSET, Unset
@@ -12,7 +12,7 @@ if TYPE_CHECKING:
 T = TypeVar("T", bound="SkyStoneScoreDetails")
 
 
-@attr.s(auto_attribs=True)
+@_attrs_define
 class SkyStoneScoreDetails:
     """
     Attributes:
@@ -60,9 +60,7 @@ class SkyStoneScoreDetails:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.sky_stone_alliance_score_details import (
-            SkyStoneAllianceScoreDetails,
-        )
+        from ..models.sky_stone_alliance_score_details import SkyStoneAllianceScoreDetails
 
         d = src_dict.copy()
         _match_level = d.pop("matchLevel", UNSET)

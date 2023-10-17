@@ -1,13 +1,13 @@
 from typing import Any, Dict, List, Type, TypeVar, Union, cast
 
-import attr
+from attrs import define as _attrs_define
 
 from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="LeagueMembers")
 
 
-@attr.s(auto_attribs=True)
+@_attrs_define
 class LeagueMembers:
     """
     Attributes:

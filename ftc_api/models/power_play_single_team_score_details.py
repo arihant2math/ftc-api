@@ -1,6 +1,6 @@
 from typing import TYPE_CHECKING, Any, Dict, Type, TypeVar, Union
 
-import attr
+from attrs import define as _attrs_define
 
 from ..models.ftc_event_level import FTCEventLevel
 from ..types import UNSET, Unset
@@ -12,7 +12,7 @@ if TYPE_CHECKING:
 T = TypeVar("T", bound="PowerPlaySingleTeamScoreDetails")
 
 
-@attr.s(auto_attribs=True)
+@_attrs_define
 class PowerPlaySingleTeamScoreDetails:
     """
     Attributes:
@@ -58,9 +58,7 @@ class PowerPlaySingleTeamScoreDetails:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.power_play_remote_score_breakdown import (
-            PowerPlayRemoteScoreBreakdown,
-        )
+        from ..models.power_play_remote_score_breakdown import PowerPlayRemoteScoreBreakdown
 
         d = src_dict.copy()
         _match_level = d.pop("matchLevel", UNSET)

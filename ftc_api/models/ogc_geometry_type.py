@@ -2,21 +2,21 @@ from enum import Enum
 
 
 class OgcGeometryType(str, Enum):
-    POINT = "Point"
-    LINESTRING = "LineString"
-    POLYGON = "Polygon"
-    MULTIPOINT = "MultiPoint"
-    MULTILINESTRING = "MultiLineString"
-    MULTIPOLYGON = "MultiPolygon"
-    GEOMETRYCOLLECTION = "GeometryCollection"
     CIRCULARSTRING = "CircularString"
     COMPOUNDCURVE = "CompoundCurve"
-    CURVEPOLYGON = "CurvePolygon"
-    MULTICURVE = "MultiCurve"
-    MULTISURFACE = "MultiSurface"
     CURVE = "Curve"
-    SURFACE = "Surface"
+    CURVEPOLYGON = "CurvePolygon"
+    GEOMETRYCOLLECTION = "GeometryCollection"
+    LINESTRING = "LineString"
+    MULTICURVE = "MultiCurve"
+    MULTILINESTRING = "MultiLineString"
+    MULTIPOINT = "MultiPoint"
+    MULTIPOLYGON = "MultiPolygon"
+    MULTISURFACE = "MultiSurface"
+    POINT = "Point"
+    POLYGON = "Polygon"
     POLYHEDRALSURFACE = "PolyhedralSurface"
+    SURFACE = "Surface"
     TIN = "TIN"
 
     def __str__(self) -> str:

@@ -15,25 +15,14 @@ from ...types import UNSET, Response, Unset
 def _get_kwargs(
     season: int,
     event_code: Optional[str],
-    tournament_level: Optional[
-        GetV20SeasonScoresEventCodeTournamentLevelTournamentLevel
-    ],
+    tournament_level: Optional[GetV20SeasonScoresEventCodeTournamentLevelTournamentLevel],
     *,
-    client: AuthenticatedClient,
     team_number: Union[Unset, None, int] = UNSET,
     match_number: Union[Unset, None, int] = UNSET,
     start: Union[Unset, None, int] = 0,
     end: Union[Unset, None, int] = 999,
 ) -> Dict[str, Any]:
-    url = "{}/v2.0/{season}/scores/{eventCode}/{tournamentLevel}".format(
-        "https://ftc-api.firstinspires.org",
-        season=season,
-        eventCode=event_code,
-        tournamentLevel=tournament_level,
-    )
-
-    headers: Dict[str, str] = client.get_headers()
-    cookies: Dict[str, Any] = client.get_cookies()
+    pass
 
     params: Dict[str, Any] = {}
     params["teamNumber"] = team_number
@@ -48,16 +37,17 @@ def _get_kwargs(
 
     return {
         "method": "get",
-        "url": url,
-        "headers": headers,
-        "cookies": cookies,
-        "timeout": client.get_timeout(),
+        "url": "/v2.0/{season}/scores/{eventCode}/{tournamentLevel}".format(
+            season=season,
+            eventCode=event_code,
+            tournamentLevel=tournament_level,
+        ),
         "params": params,
     }
 
 
 def _parse_response(
-    *, client: Client, response: httpx.Response
+    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
 ) -> Optional[Union[Any, MatchScoreList]]:
     if response.status_code == HTTPStatus.OK:
         response_200 = MatchScoreList.from_dict(response.json())
@@ -67,13 +57,13 @@ def _parse_response(
         response_401 = cast(Any, None)
         return response_401
     if client.raise_on_unexpected_status:
-        raise errors.UnexpectedStatus(f"Unexpected status code: {response.status_code}")
+        raise errors.UnexpectedStatus(response.status_code, response.content)
     else:
         return None
 
 
 def _build_response(
-    *, client: Client, response: httpx.Response
+    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
 ) -> Response[Union[Any, MatchScoreList]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
@@ -86,9 +76,7 @@ def _build_response(
 def sync_detailed(
     season: int,
     event_code: Optional[str],
-    tournament_level: Optional[
-        GetV20SeasonScoresEventCodeTournamentLevelTournamentLevel
-    ],
+    tournament_level: Optional[GetV20SeasonScoresEventCodeTournamentLevelTournamentLevel],
     *,
     client: AuthenticatedClient,
     team_number: Union[Unset, None, int] = UNSET,
@@ -124,15 +112,13 @@ def sync_detailed(
         season=season,
         event_code=event_code,
         tournament_level=tournament_level,
-        client=client,
         team_number=team_number,
         match_number=match_number,
         start=start,
         end=end,
     )
 
-    response = httpx.request(
-        verify=client.verify_ssl,
+    response = client.get_httpx_client().request(
         **kwargs,
     )
 
@@ -142,9 +128,7 @@ def sync_detailed(
 def sync(
     season: int,
     event_code: Optional[str],
-    tournament_level: Optional[
-        GetV20SeasonScoresEventCodeTournamentLevelTournamentLevel
-    ],
+    tournament_level: Optional[GetV20SeasonScoresEventCodeTournamentLevelTournamentLevel],
     *,
     client: AuthenticatedClient,
     team_number: Union[Unset, None, int] = UNSET,
@@ -173,7 +157,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[Any, MatchScoreList]]
+        Union[Any, MatchScoreList]
     """
 
     return sync_detailed(
@@ -191,9 +175,7 @@ def sync(
 async def asyncio_detailed(
     season: int,
     event_code: Optional[str],
-    tournament_level: Optional[
-        GetV20SeasonScoresEventCodeTournamentLevelTournamentLevel
-    ],
+    tournament_level: Optional[GetV20SeasonScoresEventCodeTournamentLevelTournamentLevel],
     *,
     client: AuthenticatedClient,
     team_number: Union[Unset, None, int] = UNSET,
@@ -229,15 +211,13 @@ async def asyncio_detailed(
         season=season,
         event_code=event_code,
         tournament_level=tournament_level,
-        client=client,
         team_number=team_number,
         match_number=match_number,
         start=start,
         end=end,
     )
 
-    async with httpx.AsyncClient(verify=client.verify_ssl) as _client:
-        response = await _client.request(**kwargs)
+    response = await client.get_async_httpx_client().request(**kwargs)
 
     return _build_response(client=client, response=response)
 
@@ -245,9 +225,7 @@ async def asyncio_detailed(
 async def asyncio(
     season: int,
     event_code: Optional[str],
-    tournament_level: Optional[
-        GetV20SeasonScoresEventCodeTournamentLevelTournamentLevel
-    ],
+    tournament_level: Optional[GetV20SeasonScoresEventCodeTournamentLevelTournamentLevel],
     *,
     client: AuthenticatedClient,
     team_number: Union[Unset, None, int] = UNSET,
@@ -276,7 +254,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[Any, MatchScoreList]]
+        Union[Any, MatchScoreList]
     """
 
     return (

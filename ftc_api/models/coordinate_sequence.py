@@ -1,6 +1,6 @@
 from typing import Any, Dict, Type, TypeVar, Union
 
-import attr
+from attrs import define as _attrs_define
 
 from ..models.ordinates import Ordinates
 from ..types import UNSET, Unset
@@ -8,7 +8,7 @@ from ..types import UNSET, Unset
 T = TypeVar("T", bound="CoordinateSequence")
 
 
-@attr.s(auto_attribs=True)
+@_attrs_define
 class CoordinateSequence:
     """
     Attributes:

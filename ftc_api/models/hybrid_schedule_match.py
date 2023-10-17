@@ -1,7 +1,7 @@
 import datetime
 from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
-import attr
+from attrs import define as _attrs_define
 from dateutil.parser import isoparse
 
 from ..types import UNSET, Unset
@@ -13,7 +13,7 @@ if TYPE_CHECKING:
 T = TypeVar("T", bound="HybridScheduleMatch")
 
 
-@attr.s(auto_attribs=True)
+@_attrs_define
 class HybridScheduleMatch:
     """
     Attributes:
@@ -67,15 +67,11 @@ class HybridScheduleMatch:
 
         actual_start_time: Union[Unset, None, str] = UNSET
         if not isinstance(self.actual_start_time, Unset):
-            actual_start_time = (
-                self.actual_start_time.isoformat() if self.actual_start_time else None
-            )
+            actual_start_time = self.actual_start_time.isoformat() if self.actual_start_time else None
 
         post_result_time: Union[Unset, None, str] = UNSET
         if not isinstance(self.post_result_time, Unset):
-            post_result_time = (
-                self.post_result_time.isoformat() if self.post_result_time else None
-            )
+            post_result_time = self.post_result_time.isoformat() if self.post_result_time else None
 
         score_red_final = self.score_red_final
         score_red_foul = self.score_red_foul

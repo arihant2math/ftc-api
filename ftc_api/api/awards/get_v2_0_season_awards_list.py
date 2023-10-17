@@ -11,27 +11,19 @@ from ...types import Response
 
 def _get_kwargs(
     season: int,
-    *,
-    client: AuthenticatedClient,
 ) -> Dict[str, Any]:
-    url = "{}/v2.0/{season}/awards/list".format(
-        "https://ftc-api.firstinspires.org", season=season
-    )
-
-    headers: Dict[str, str] = client.get_headers()
-    cookies: Dict[str, Any] = client.get_cookies()
+    pass
 
     return {
         "method": "get",
-        "url": url,
-        "headers": headers,
-        "cookies": cookies,
-        "timeout": client.get_timeout(),
+        "url": "/v2.0/{season}/awards/list".format(
+            season=season,
+        ),
     }
 
 
 def _parse_response(
-    *, client: Client, response: httpx.Response
+    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
 ) -> Optional[Union[Any, AwardList]]:
     if response.status_code == HTTPStatus.OK:
         response_200 = AwardList.from_dict(response.json())
@@ -41,13 +33,13 @@ def _parse_response(
         response_401 = cast(Any, None)
         return response_401
     if client.raise_on_unexpected_status:
-        raise errors.UnexpectedStatus(f"Unexpected status code: {response.status_code}")
+        raise errors.UnexpectedStatus(response.status_code, response.content)
     else:
         return None
 
 
 def _build_response(
-    *, client: Client, response: httpx.Response
+    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
 ) -> Response[Union[Any, AwardList]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
@@ -82,11 +74,9 @@ def sync_detailed(
 
     kwargs = _get_kwargs(
         season=season,
-        client=client,
     )
 
-    response = httpx.request(
-        verify=client.verify_ssl,
+    response = client.get_httpx_client().request(
         **kwargs,
     )
 
@@ -113,7 +103,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[Any, AwardList]]
+        Union[Any, AwardList]
     """
 
     return sync_detailed(
@@ -147,11 +137,9 @@ async def asyncio_detailed(
 
     kwargs = _get_kwargs(
         season=season,
-        client=client,
     )
 
-    async with httpx.AsyncClient(verify=client.verify_ssl) as _client:
-        response = await _client.request(**kwargs)
+    response = await client.get_async_httpx_client().request(**kwargs)
 
     return _build_response(client=client, response=response)
 
@@ -176,7 +164,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[Any, AwardList]]
+        Union[Any, AwardList]
     """
 
     return (

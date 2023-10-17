@@ -1,6 +1,6 @@
 from typing import TYPE_CHECKING, Any, Dict, Type, TypeVar, Union
 
-import attr
+from attrs import define as _attrs_define
 
 from ..types import UNSET, Unset
 
@@ -14,7 +14,7 @@ if TYPE_CHECKING:
 T = TypeVar("T", bound="NtsGeometryServices")
 
 
-@attr.s(auto_attribs=True)
+@_attrs_define
 class NtsGeometryServices:
     """
     Attributes:
@@ -28,9 +28,7 @@ class NtsGeometryServices:
     geometry_overlay: Union[Unset, "GeometryOverlay"] = UNSET
     coordinate_equality_comparer: Union[Unset, "CoordinateEqualityComparer"] = UNSET
     default_srid: Union[Unset, int] = UNSET
-    default_coordinate_sequence_factory: Union[
-        Unset, "CoordinateSequenceFactory"
-    ] = UNSET
+    default_coordinate_sequence_factory: Union[Unset, "CoordinateSequenceFactory"] = UNSET
     default_precision_model: Union[Unset, "PrecisionModel"] = UNSET
 
     def to_dict(self) -> Dict[str, Any]:
@@ -45,9 +43,7 @@ class NtsGeometryServices:
         default_srid = self.default_srid
         default_coordinate_sequence_factory: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.default_coordinate_sequence_factory, Unset):
-            default_coordinate_sequence_factory = (
-                self.default_coordinate_sequence_factory.to_dict()
-            )
+            default_coordinate_sequence_factory = self.default_coordinate_sequence_factory.to_dict()
 
         default_precision_model: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.default_precision_model, Unset):
@@ -62,9 +58,7 @@ class NtsGeometryServices:
         if default_srid is not UNSET:
             field_dict["defaultSRID"] = default_srid
         if default_coordinate_sequence_factory is not UNSET:
-            field_dict[
-                "defaultCoordinateSequenceFactory"
-            ] = default_coordinate_sequence_factory
+            field_dict["defaultCoordinateSequenceFactory"] = default_coordinate_sequence_factory
         if default_precision_model is not UNSET:
             field_dict["defaultPrecisionModel"] = default_precision_model
 
@@ -90,15 +84,11 @@ class NtsGeometryServices:
         if isinstance(_coordinate_equality_comparer, Unset):
             coordinate_equality_comparer = UNSET
         else:
-            coordinate_equality_comparer = CoordinateEqualityComparer.from_dict(
-                _coordinate_equality_comparer
-            )
+            coordinate_equality_comparer = CoordinateEqualityComparer.from_dict(_coordinate_equality_comparer)
 
         default_srid = d.pop("defaultSRID", UNSET)
 
-        _default_coordinate_sequence_factory = d.pop(
-            "defaultCoordinateSequenceFactory", UNSET
-        )
+        _default_coordinate_sequence_factory = d.pop("defaultCoordinateSequenceFactory", UNSET)
         default_coordinate_sequence_factory: Union[Unset, CoordinateSequenceFactory]
         if isinstance(_default_coordinate_sequence_factory, Unset):
             default_coordinate_sequence_factory = UNSET

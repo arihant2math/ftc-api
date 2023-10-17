@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Type, TypeVar, Union
 
-import attr
+from attrs import define as _attrs_define
 
 from ..models.stone import Stone
 from ..types import UNSET, Unset
@@ -8,7 +8,7 @@ from ..types import UNSET, Unset
 T = TypeVar("T", bound="SkyStoneAllianceScoreDetails")
 
 
-@attr.s(auto_attribs=True)
+@_attrs_define
 class SkyStoneAllianceScoreDetails:
     """
     Attributes:
@@ -178,9 +178,7 @@ class SkyStoneAllianceScoreDetails:
         if navigation_points is not UNSET:
             field_dict["navigationPoints"] = navigation_points
         if driver_controlled_delivery_points is not UNSET:
-            field_dict[
-                "driverControlledDeliveryPoints"
-            ] = driver_controlled_delivery_points
+            field_dict["driverControlledDeliveryPoints"] = driver_controlled_delivery_points
         if driver_controlled_placed_points is not UNSET:
             field_dict["driverControlledPlacedPoints"] = driver_controlled_placed_points
         if skyscraper_bonus_points is not UNSET:
@@ -258,9 +256,7 @@ class SkyStoneAllianceScoreDetails:
 
         navigation_points = d.pop("navigationPoints", UNSET)
 
-        driver_controlled_delivery_points = d.pop(
-            "driverControlledDeliveryPoints", UNSET
-        )
+        driver_controlled_delivery_points = d.pop("driverControlledDeliveryPoints", UNSET)
 
         driver_controlled_placed_points = d.pop("driverControlledPlacedPoints", UNSET)
 

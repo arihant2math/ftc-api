@@ -1,7 +1,7 @@
 import datetime
 from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union, cast
 
-import attr
+from attrs import define as _attrs_define
 from dateutil.parser import isoparse
 
 from ..types import UNSET, Unset
@@ -13,7 +13,7 @@ if TYPE_CHECKING:
 T = TypeVar("T", bound="Event")
 
 
-@attr.s(auto_attribs=True)
+@_attrs_define
 class Event:
     """
     Attributes:
