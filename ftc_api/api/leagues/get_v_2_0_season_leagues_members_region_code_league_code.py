@@ -58,7 +58,7 @@ def sync_detailed(
     region_code: Optional[str],
     league_code: Optional[str],
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
 ) -> Response[Union[Any, LeagueMembers]]:
     """League Membership
 
@@ -96,7 +96,7 @@ def sync(
     region_code: Optional[str],
     league_code: Optional[str],
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
 ) -> Optional[Union[Any, LeagueMembers]]:
     """League Membership
 
@@ -129,7 +129,7 @@ async def asyncio_detailed(
     region_code: Optional[str],
     league_code: Optional[str],
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
 ) -> Response[Union[Any, LeagueMembers]]:
     """League Membership
 
@@ -165,7 +165,7 @@ async def asyncio(
     region_code: Optional[str],
     league_code: Optional[str],
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
 ) -> Optional[Union[Any, LeagueMembers]]:
     """League Membership
 

@@ -72,7 +72,7 @@ def sync_detailed(
     event_code: Optional[str],
     tournament_level: Optional[GetV20SeasonScheduleEventCodeTournamentLevelHybridTournamentLevel],
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
     start: Union[Unset, None, int] = 0,
     end: Union[Unset, None, int] = 999,
 ) -> Response[Union[Any, HybridSchedule]]:
@@ -119,7 +119,7 @@ def sync(
     event_code: Optional[str],
     tournament_level: Optional[GetV20SeasonScheduleEventCodeTournamentLevelHybridTournamentLevel],
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
     start: Union[Unset, None, int] = 0,
     end: Union[Unset, None, int] = 999,
 ) -> Optional[Union[Any, HybridSchedule]]:
@@ -161,7 +161,7 @@ async def asyncio_detailed(
     event_code: Optional[str],
     tournament_level: Optional[GetV20SeasonScheduleEventCodeTournamentLevelHybridTournamentLevel],
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
     start: Union[Unset, None, int] = 0,
     end: Union[Unset, None, int] = 999,
 ) -> Response[Union[Any, HybridSchedule]]:
@@ -206,7 +206,7 @@ async def asyncio(
     event_code: Optional[str],
     tournament_level: Optional[GetV20SeasonScheduleEventCodeTournamentLevelHybridTournamentLevel],
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
     start: Union[Unset, None, int] = 0,
     end: Union[Unset, None, int] = 999,
 ) -> Optional[Union[Any, HybridSchedule]]:

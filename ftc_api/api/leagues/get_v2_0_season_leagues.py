@@ -63,7 +63,7 @@ def _build_response(
 def sync_detailed(
     season: int,
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
     region_code: Union[Unset, None, str] = UNSET,
     league_code: Union[Unset, None, str] = UNSET,
 ) -> Response[Union[Any, LeagueList]]:
@@ -104,7 +104,7 @@ def sync_detailed(
 def sync(
     season: int,
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
     region_code: Union[Unset, None, str] = UNSET,
     league_code: Union[Unset, None, str] = UNSET,
 ) -> Optional[Union[Any, LeagueList]]:
@@ -140,7 +140,7 @@ def sync(
 async def asyncio_detailed(
     season: int,
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
     region_code: Union[Unset, None, str] = UNSET,
     league_code: Union[Unset, None, str] = UNSET,
 ) -> Response[Union[Any, LeagueList]]:
@@ -179,7 +179,7 @@ async def asyncio_detailed(
 async def asyncio(
     season: int,
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
     region_code: Union[Unset, None, str] = UNSET,
     league_code: Union[Unset, None, str] = UNSET,
 ) -> Optional[Union[Any, LeagueList]]:

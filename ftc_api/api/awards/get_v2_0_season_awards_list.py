@@ -52,7 +52,7 @@ def _build_response(
 def sync_detailed(
     season: int,
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
 ) -> Response[Union[Any, AwardList]]:
     """Award Listings
 
@@ -86,7 +86,7 @@ def sync_detailed(
 def sync(
     season: int,
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
 ) -> Optional[Union[Any, AwardList]]:
     """Award Listings
 
@@ -115,7 +115,7 @@ def sync(
 async def asyncio_detailed(
     season: int,
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
 ) -> Response[Union[Any, AwardList]]:
     """Award Listings
 
@@ -147,7 +147,7 @@ async def asyncio_detailed(
 async def asyncio(
     season: int,
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
 ) -> Optional[Union[Any, AwardList]]:
     """Award Listings
 

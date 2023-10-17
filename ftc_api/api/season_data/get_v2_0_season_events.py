@@ -63,7 +63,7 @@ def _build_response(
 def sync_detailed(
     season: int,
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
     event_code: Union[Unset, None, str] = "0",
     team_number: Union[Unset, None, int] = 0,
 ) -> Response[Union[Any, EventList]]:
@@ -109,7 +109,7 @@ def sync_detailed(
 def sync(
     season: int,
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
     event_code: Union[Unset, None, str] = "0",
     team_number: Union[Unset, None, int] = 0,
 ) -> Optional[Union[Any, EventList]]:
@@ -150,7 +150,7 @@ def sync(
 async def asyncio_detailed(
     season: int,
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
     event_code: Union[Unset, None, str] = "0",
     team_number: Union[Unset, None, int] = 0,
 ) -> Response[Union[Any, EventList]]:
@@ -194,7 +194,7 @@ async def asyncio_detailed(
 async def asyncio(
     season: int,
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
     event_code: Union[Unset, None, str] = "0",
     team_number: Union[Unset, None, int] = 0,
 ) -> Optional[Union[Any, EventList]]:

@@ -58,7 +58,7 @@ def sync_detailed(
     region_code: Optional[str],
     league_code: Optional[str],
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
 ) -> Response[Union[Any, EventRankingList]]:
     """League Rankings
 
@@ -97,7 +97,7 @@ def sync(
     region_code: Optional[str],
     league_code: Optional[str],
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
 ) -> Optional[Union[Any, EventRankingList]]:
     """League Rankings
 
@@ -131,7 +131,7 @@ async def asyncio_detailed(
     region_code: Optional[str],
     league_code: Optional[str],
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
 ) -> Response[Union[Any, EventRankingList]]:
     """League Rankings
 
@@ -168,7 +168,7 @@ async def asyncio(
     region_code: Optional[str],
     league_code: Optional[str],
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
 ) -> Optional[Union[Any, EventRankingList]]:
     """League Rankings
 

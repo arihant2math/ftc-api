@@ -63,7 +63,7 @@ def sync_detailed(
     season: int,
     team_number: int = 0,
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
     event_code: Union[Unset, None, str] = "",
 ) -> Response[Union[Any, AwardAssignmentList]]:
     """Event Awards
@@ -107,7 +107,7 @@ def sync(
     season: int,
     team_number: int = 0,
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
     event_code: Union[Unset, None, str] = "",
 ) -> Optional[Union[Any, AwardAssignmentList]]:
     """Event Awards
@@ -146,7 +146,7 @@ async def asyncio_detailed(
     season: int,
     team_number: int = 0,
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
     event_code: Union[Unset, None, str] = "",
 ) -> Response[Union[Any, AwardAssignmentList]]:
     """Event Awards
@@ -188,7 +188,7 @@ async def asyncio(
     season: int,
     team_number: int = 0,
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
     event_code: Union[Unset, None, str] = "",
 ) -> Optional[Union[Any, AwardAssignmentList]]:
     """Event Awards

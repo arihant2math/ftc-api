@@ -52,7 +52,7 @@ def _build_response(
 def sync_detailed(
     season: int,
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
 ) -> Response[Union[Any, SeasonSummary]]:
     """Season Summary
 
@@ -83,7 +83,7 @@ def sync_detailed(
 def sync(
     season: int,
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
 ) -> Optional[Union[Any, SeasonSummary]]:
     """Season Summary
 
@@ -109,7 +109,7 @@ def sync(
 async def asyncio_detailed(
     season: int,
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
 ) -> Response[Union[Any, SeasonSummary]]:
     """Season Summary
 
@@ -138,7 +138,7 @@ async def asyncio_detailed(
 async def asyncio(
     season: int,
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
 ) -> Optional[Union[Any, SeasonSummary]]:
     """Season Summary
 

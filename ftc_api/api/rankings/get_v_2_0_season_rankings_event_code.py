@@ -66,7 +66,7 @@ def sync_detailed(
     season: int,
     event_code: Optional[str],
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
     team_number: Union[Unset, None, int] = 0,
     top: Union[Unset, None, int] = 0,
 ) -> Response[Union[Any, EventRankingList]]:
@@ -110,7 +110,7 @@ def sync(
     season: int,
     event_code: Optional[str],
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
     team_number: Union[Unset, None, int] = 0,
     top: Union[Unset, None, int] = 0,
 ) -> Optional[Union[Any, EventRankingList]]:
@@ -149,7 +149,7 @@ async def asyncio_detailed(
     season: int,
     event_code: Optional[str],
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
     team_number: Union[Unset, None, int] = 0,
     top: Union[Unset, None, int] = 0,
 ) -> Response[Union[Any, EventRankingList]]:
@@ -191,7 +191,7 @@ async def asyncio(
     season: int,
     event_code: Optional[str],
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
     team_number: Union[Unset, None, int] = 0,
     top: Union[Unset, None, int] = 0,
 ) -> Optional[Union[Any, EventRankingList]]:

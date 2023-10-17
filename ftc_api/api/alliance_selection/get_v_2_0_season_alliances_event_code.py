@@ -55,7 +55,7 @@ def sync_detailed(
     season: int,
     event_code: Optional[str],
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
 ) -> Response[Union[AllianceSelection, Any]]:
     """Event Alliances
 
@@ -90,7 +90,7 @@ def sync(
     season: int,
     event_code: Optional[str],
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
 ) -> Optional[Union[AllianceSelection, Any]]:
     """Event Alliances
 
@@ -120,7 +120,7 @@ async def asyncio_detailed(
     season: int,
     event_code: Optional[str],
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
 ) -> Response[Union[AllianceSelection, Any]]:
     """Event Alliances
 
@@ -153,7 +153,7 @@ async def asyncio(
     season: int,
     event_code: Optional[str],
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
 ) -> Optional[Union[AllianceSelection, Any]]:
     """Event Alliances
 
