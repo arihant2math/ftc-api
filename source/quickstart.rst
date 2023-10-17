@@ -26,11 +26,11 @@ Now call your endpoint and use your models:
 
     client = ftc_api.Client(username="test", authorization_key="****-****-****-****")
     my_data = get_v2_0_season.sync(client=client, season=2022)
-    print(my_data.game_name) # CENTERSTAGE
+    print(my_data.game_name)  # CENTERSTAGE
     # or if you need more info (e.g. status_code)
     response = get_v2_0_season.sync_detailed(client=client, season=2022)
-    print(response.headers) # server headers
-    print(response.content) # raw json
+    print(response.headers)  # server headers
+    print(response.content)  # raw text
 
 Or do the same thing with an async version:
 
@@ -41,11 +41,11 @@ Or do the same thing with an async version:
 
     client = ftc_api.Client(username="your username here", authorization_key="****-****-****-****")
     my_data = await get_v2_0_season.asyncio(client=client, season=2022)
-    print(my_data.game_name) # CENTERSTAGE
+    print(my_data.game_name)  # CENTERSTAGE
     # or if you need more info (e.g. status_code)
     response = await get_v2_0_season.asyncio(client=client, season=2022)
-    print(response.headers) # server headers
-    print(response.content) # raw json
+    print(response.headers)  # server headers
+    print(response.content)  # raw text
 
 
 

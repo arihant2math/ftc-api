@@ -92,10 +92,58 @@ ftc\_api.models.barcode\_element module
    :undoc-members:
    :show-inheritance:
 
+ftc\_api.models.coordinate module
+---------------------------------
+
+.. automodule:: ftc_api.models.coordinate
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ftc\_api.models.coordinate\_equality\_comparer module
+-----------------------------------------------------
+
+.. automodule:: ftc_api.models.coordinate_equality_comparer
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ftc\_api.models.coordinate\_sequence module
+-------------------------------------------
+
+.. automodule:: ftc_api.models.coordinate_sequence
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ftc\_api.models.coordinate\_sequence\_factory module
+----------------------------------------------------
+
+.. automodule:: ftc_api.models.coordinate_sequence_factory
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ftc\_api.models.dimension module
+--------------------------------
+
+.. automodule:: ftc_api.models.dimension
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 ftc\_api.models.endgame\_parked\_status module
 ----------------------------------------------
 
 .. automodule:: ftc_api.models.endgame_parked_status
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ftc\_api.models.envelope module
+-------------------------------
+
+.. automodule:: ftc_api.models.envelope
    :members:
    :undoc-members:
    :show-inheritance:
@@ -168,6 +216,30 @@ ftc\_api.models.ftc\_event\_level module
 ----------------------------------------
 
 .. automodule:: ftc_api.models.ftc_event_level
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ftc\_api.models.geometry module
+-------------------------------
+
+.. automodule:: ftc_api.models.geometry
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ftc\_api.models.geometry\_factory module
+----------------------------------------
+
+.. automodule:: ftc_api.models.geometry_factory
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ftc\_api.models.geometry\_overlay module
+----------------------------------------
+
+.. automodule:: ftc_api.models.geometry_overlay
    :members:
    :undoc-members:
    :show-inheritance:
@@ -276,6 +348,38 @@ ftc\_api.models.match\_score\_list module
    :undoc-members:
    :show-inheritance:
 
+ftc\_api.models.nts\_geometry\_services module
+----------------------------------------------
+
+.. automodule:: ftc_api.models.nts_geometry_services
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ftc\_api.models.ogc\_geometry\_type module
+------------------------------------------
+
+.. automodule:: ftc_api.models.ogc_geometry_type
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ftc\_api.models.ordinates module
+--------------------------------
+
+.. automodule:: ftc_api.models.ordinates
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ftc\_api.models.point module
+----------------------------
+
+.. automodule:: ftc_api.models.point
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 ftc\_api.models.power\_play\_alliance\_score\_breakdown module
 --------------------------------------------------------------
 
@@ -304,6 +408,22 @@ ftc\_api.models.power\_play\_single\_team\_score\_details module
 ----------------------------------------------------------------
 
 .. automodule:: ftc_api.models.power_play_single_team_score_details
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ftc\_api.models.precision\_model module
+---------------------------------------
+
+.. automodule:: ftc_api.models.precision_model
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ftc\_api.models.precision\_models module
+----------------------------------------
+
+.. automodule:: ftc_api.models.precision_models
    :members:
    :undoc-members:
    :show-inheritance:

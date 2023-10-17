@@ -1,7 +1,5 @@
-API Docs
+ftc\_api package
 ================
-.. important::
-    Better api docs, maintained by FIRST, can be found here: https://ftc-events.firstinspires.org/api-docs/index.html
 
 Subpackages
 -----------
@@ -27,6 +25,14 @@ ftc\_api.errors module
 ----------------------
 
 .. automodule:: ftc_api.errors
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ftc\_api.types module
+---------------------
+
+.. automodule:: ftc_api.types
    :members:
    :undoc-members:
    :show-inheritance:
